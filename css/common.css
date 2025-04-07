@@ -38,6 +38,82 @@
     /* clip-path: inherit;*/
 }
 
+.image-area {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+}
+.image-area img {
+    width: 100%;
+    min-width: 650px;
+    height: 280px; 
+    display: block;
+}
+.hotspot {
+    position: absolute;
+    width: 90px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid red;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hotspot:hover {
+    transform: scale(1.1);
+}
+
+/* ◀▶ ボタンを中心に配置 */
+.arrow-buttons button, .back-buttons button{
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.arrow-buttons button:hover, .back-buttons button:hover {
+    background-color: rgba(169, 169, 169, 1); /* ホバー時に背景を濃く */
+}
+
+.description {
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    background-color: white;
+    display: none;
+    opacity: 0;
+}
+
+.description.show {
+    display: block;
+}
+
+.description img{
+    margin-top: 35px;
+    width: 90%;
+    max-width: 800px;    /* 最大幅を800pxに制限 */
+    height: auto;
+    display: block;
+}
+
+.description h2, .description p{
+    text-align: center
+}
+
+.description.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 /* 全てを囲って真ん中に綺麗になるように配置 */
 /* 特にこの三行で指定
 display: flex;
@@ -75,6 +151,34 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     }
 }
 
+/* スマホ用 (画面幅768px以下) */
+@media (max-width: 768px) {
+    .hotspot {
+        position: absolute;
+        width: 65px;
+        height: 75px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .hotspot[data-id="area1"] {
+        top: 62% !important; /* スマホ用の位置調整 */
+        left: 44% !important;
+    }
+
+    .hotspot[data-id="area2"] {
+        top: 66% !important; /* スマホ用の位置調整 */
+        left: 84% !important;
+    }
+
+    .hotspot[data-id="area3"] {
+        top: 0% !important; /* スマホ用の位置調整 */
+        left: 91% !important;
+    }
+}
+
 /* さらに小さな画面（スマホなど）に対応する */
 @media (max-width: 480px) {
     .hexagon-wrapper {
@@ -95,5 +199,32 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     .hexagon img {
         width: 180px;
         height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hotspot {
+        position: absolute;
+        width: 65px;
+        height: 75px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .hotspot[data-id="area1"] {
+        top: 62% !important; /* スマホ用の位置調整 */
+        left: 57% !important;
+    }
+
+    .hotspot[data-id="area2"] {
+        top: 66% !important; /* スマホ用の位置調整 */
+        left: 110% !important;
+    }
+
+    .hotspot[data-id="area3"] {
+        top: -2% !important; /* スマホ用の位置調整 */
+        left: 118% !important;
     }
 }
