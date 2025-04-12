@@ -159,15 +159,34 @@ body {
 
 .page-title {
     font-family: var(--font-main);
-    font-size: 3rem;
+    font-size: 1.5rem;
     color: var(--main-bg);
     text-shadow: 2px 2px 2px var(--font-color);
     text-align: center;
     background-color: white;
 }
+
+@media (min-width: 480px) {
+    .page-title {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .page-title {
+        font-size: 3rem;
+    }
+}
 /* ↑↑↑↑↑↑ 基本設定用 ↑↑↑↑↑↑ */
 
 /* ↓↓↓↓↓↓ groups.html用 ↓↓↓↓↓↓ */
+/* 左右に寄せる */
 .d-flex {
     justify-content: center;
 }
@@ -183,6 +202,7 @@ body {
     }
 }
 
+/* 幅調整 */
 .row {
     width: 100%;
 }
@@ -190,6 +210,16 @@ body {
 @media (min-width: 1200px) {
     .row {
         width: 85%;
+    }
+}
+
+.text-content {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .text-content {
+        font-size: 1.4rem;
     }
 }
 /* ↑↑↑↑↑↑ groups.html用 ↑↑↑↑↑↑ */
@@ -292,8 +322,8 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     }
 }
 
-/* レスポンシブデザイン - 992px以上 */
-@media (min-width: 992px) {
+/* レスポンシブデザイン - 768px以上 */
+@media (min-width: 768px) {
     .hexagon-wrapper {
         width: 400px;
         height: 360px;
