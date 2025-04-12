@@ -14,25 +14,25 @@
 /* ヘッダーの背景色とサイズ */
 .navbar {
     background-color: rgba(255, 255, 255, 0.95);
-    height: 90px;
+    height: 70px;
 }
 
-/* ヘッダーのサイズ - 768px以下 */
-@media (max-width: 768px) {
+/* ヘッダーのサイズ - 768px以上 */
+@media (min-width: 768px) {
     .navbar {
-        height: 70px;
+        height: 90px;
     }
 }
 
 /* ロゴのサイズ */
 .logo-img {
-    height: 70px;
+    height: 50px;
 }
 
-/* ロゴのサイズ - 768px以下 */
-@media (max-width: 768px) {
+/* ロゴのサイズ - 768px以上 */
+@media (min-width: 768px) {
     .logo-img {
-        height: 50px;
+        height: 70px;
     }
 }
 
@@ -45,16 +45,16 @@
 .offcanvas-title {
     width: 500px !important;
     font-family: var(--font-main);
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--main-bg);
     text-shadow: 1px 1px 2px var(--font-color);
     transition: all 0.3s ease-in-out;
 }
 
-/* メニュータイトル - 768px以下 */
-@media (max-width: 768px) {
+/* メニュータイトル - 768px以上 */
+@media (min-width: 768px) {
     .offcanvas-title {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -67,11 +67,11 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* メニュー文字 - 991px以下 */
-@media (max-width: 991px) {
+/* メニュー文字 - 992px以上 */
+@media (max-width: 992px) {
     .offcanvas-body .nav-link {
         font-family: var(--font-main);
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         color: var(--font-color);
         border-bottom: 2px solid var(--sub-bg);
         padding-bottom: 2px;
@@ -81,10 +81,10 @@
     }
 }
 
-/* メニュー文字 - 768px以下 */
-@media (max-width: 768px) {
+/* メニュー文字 - 768px以上 */
+@media (min-width: 768px) {
     .offcanvas-body .nav-link {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -126,15 +126,20 @@
     transform: none;
 }
 
-/* メニュー背景のグラデーション - 991px以下 */
-@media (max-width: 991px) {
+/* メニュー背景のグラデーション */
+.offcanvas.offcanvas-gradient {
+    background: linear-gradient(to bottom, white, var(--main-bg));
+}
+
+/* メニュー背景のグラデーション - 992px以上 */
+@media (min-width: 992px) {
     .offcanvas.offcanvas-gradient {
-        background: linear-gradient(to bottom, white, var(--main-bg));
+        background: white;
     }
 }
 
-/* メニューの全画面表示 - 768px以下 */
-@media (max-width: 768px) {
+/* メニューの全画面表示 - 767px以下 */
+@media (max-width: 767px) {
     .offcanvas-fullscreen {
         width: 100vw !important;
         max-width: 100vw !important;
@@ -195,8 +200,8 @@ body {
     color: #333;
     transition: transform 0.2s ease, color 0.2s ease;
 }
-  
-.sns-link:hover i{
+
+.sns-link:hover i {
     transform: scale(1.2) !important;
 }
 
@@ -204,7 +209,7 @@ body {
     text-decoration: none;
     transition: transform 0.2s ease, color 0.2s ease;
 }
-  
+
 .question-link:hover a {
     color: blue !important;
 }
