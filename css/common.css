@@ -12,6 +12,14 @@
     color: #99c764;
 }
 
+.back-ground-color {
+    background: linear-gradient(to bottom, aqua, #99c764);
+}
+
+.header-bg {
+    background-color: #ffffff;
+}
+
 .offcanvas-body .nav-link {
     font-family: "Noto Sans JP", sans-serif; /* お好みのフォントに変更 */
     font-size: 1.2rem; /* フォントサイズ */
@@ -109,8 +117,8 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     }
 
     .hexagon img {
-        width: 200px;
-        height: 170px;
+        width: 280px;
+        height: 250px;
     }
 }
 
@@ -132,8 +140,8 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     }
 
     .hexagon img {
-        width: 180px;
-        height: 150px;
+        width: 230px;
+        height: 200px;
     }
 }
 /* ↑↑↑↑↑↑ 六角形の描画用 ↑↑↑↑↑↑ */
