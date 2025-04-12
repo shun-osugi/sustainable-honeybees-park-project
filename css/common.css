@@ -189,6 +189,27 @@ body {
 }
 /* ↑↑↑↑↑↑ groups.html用 ↑↑↑↑↑↑ */
 
+/* ↓↓↓↓↓↓ snsホバー用 ↓↓↓↓↓↓ */
+.sns-link {
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+  
+.sns-link:hover i{
+    transform: scale(1.2) !important;
+}
+
+.question-link {
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+  
+.question-link:hover a {
+    color: blue !important;
+}
+/* ↑↑↑↑↑↑ snsホバー用 ↑↑↑↑↑↑ */
+
 /* ↓↓↓↓↓↓ 六角形の描画用 ↓↓↓↓↓↓ */
 .hexagon-wrapper {
     position: relative;
