@@ -1,34 +1,97 @@
 /* common.css */
 
 :root {
-    --main-bg: #99c764;
-    --shadow-color: rgba(0, 0, 0, 0.5);
-    --font-main: "Noto Sans JP", sans-serif;
+    --main-bg: #c8ff2a;
+    --sub-bg: #ffe100;
+    --accent-gold: #dbb418;
+    --font-color: #376f5d;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --font-main: "Zen Kurenaido", sans-serif;
 }
 
 /* ↓↓↓↓↓↓ ヘッダーメニュー用 ↓↓↓↓↓↓ */
-.offcanvas-gradient {
-    background: linear-gradient(to bottom, white, #99c764);
-    color: #99c764;
+/* ヘッダー背景色 */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    height: 90px;
 }
 
+/* ロゴのサイズ */
+.logo-img {
+    height: 70px;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 30px;
+    }
+}
+
+/* メニュータイトル */
+.offcanvas {
+    width: 500px !important;
+    font-family: var(--font-main);
+    font-size: 1.4rem;
+    color: var(--main-bg);
+    text-shadow: 1.5px 1.5px 2px var(--font-color);
+    transition: all 0.3s ease-in-out;
+}
+
+/* メニュー文字 */
 .offcanvas-body .nav-link {
-    font-family: "Noto Sans JP", sans-serif; /* お好みのフォントに変更 */
-    font-size: 1.2rem; /* フォントサイズ */
-    color: #ffffff; /* 文字色（白） */
-    text-decoration: underline; /* アンダーバー */
-    text-underline-offset: 4px; /* アンダーバーの余白調整 */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 文字の影 */
-    transition: all 0.3s ease-in-out; /* アニメーション効果 */
+    font-family: var(--font-main);
+    font-size: 1.8rem;
+    color: var(--font-color);
+    border-bottom: 2px solid var(--sub-bg);
+    padding-bottom: 2px;
+    text-shadow: 1px 1px 2px var(--shadow);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+/* メニュー文字(最下) */
+.offcanvas-body .nav-link.foot {
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    color: var(--font-color);
+    border-bottom: 2px solid var(--sub-bg);
+    padding-bottom: 2px;
+    text-shadow: none;
+    transition: all 0.3s ease-in-out;
+    margin-top: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+.offcanvas-body .nav-item.foot {
+    text-align: center;
 }
 
 /* ホバー時のエフェクト */
 .offcanvas-body .nav-link:hover {
-    color: #ffe066; /* ホバー時の色 */
+    color: var(--main-bg);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    transform: translateX(5px); /* ホバーでちょっと動く */
+    transform: translateX(5px);
 }
 
+.offcanvas-body .nav-link.foot:hover {
+    color: var(--main-bg);
+    text-shadow: none;
+    transform: none;
+}
+
+/* メニュー背景のグラデーション */
+.offcanvas.offcanvas-gradient {
+    background: linear-gradient(to bottom, white, var(--main-bg));
+}
+
+/* メニューの全画面表示 - 768px以下 */
 @media (max-width: 768px) {
     .offcanvas-fullscreen {
         width: 100vw !important;
@@ -36,6 +99,12 @@
     }
 }
 /* ↑↑↑↑↑↑ ヘッダーメニュー用 ↑↑↑↑↑↑ */
+
+/* ↓↓↓↓↓↓ 基本設定用 ↓↓↓↓↓↓ */
+body {
+    background: linear-gradient(to bottom, white, var(--main-bg));
+}
+/* ↑↑↑↑↑↑ 基本設定用 ↑↑↑↑↑↑ */
 
 /* ↓↓↓↓↓↓ 六角形の描画用 ↓↓↓↓↓↓ */
 .hexagon-wrapper {
@@ -52,7 +121,7 @@
 .hexagon-background {
     width: 420px;
     height: 370px;
-    background: #ffe100; /* ゴールドっぽい色 */
+    background: var(--sub-bg); /* ゴールドっぽい色 */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     position: absolute;
 }
@@ -61,7 +130,7 @@
 .hexagon {
     width: 400px;
     height: 350px;
-    background: #ffffff;
+    background: white;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
     align-items: center;
@@ -173,7 +242,7 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    background-color: white;
     border: none;
     cursor: pointer;
     font-size: 24px;
