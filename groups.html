@@ -9,18 +9,19 @@
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
             crossorigin="anonymous"
         />
+        <!-- 外部CSSファイルをリンク -->
         <link rel="stylesheet" href="css/common.css" />
+        <!-- 外部フォントをリンク -->
         <link
             href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap"
             rel="stylesheet"
         />
-        <!-- 外部CSSファイルをリンク -->
         <title>関連団体</title>
     </head>
     <body class="back-ground-color">
         <!-- ヘッダー -->
 
-        <nav class="navbar sticky-top">
+        <nav class="navbar sticky-top navbar-expand-lg">
             <div class="container">
                 <!-- 中央のロゴ -->
                 <a
@@ -86,62 +87,72 @@
                 </div>
             </div>
         </nav>
-        <h2 class="m-3 text-white">
-            <span class="bg-warning p-2">関連団体</span>
+        <h2 class="my-3 my-md-4 p-3 px-md-4 page-title">
+            <span class="p-2">・関連団体</span>
         </h2>
         <!-- ヘッダー　ここまで -->
-        <div class="container px-2 px-sm-3" >
-            <div
-                class="row align-items-center my-3 bg-white rounded shadow px-3 px-md-4"
-            >
-                <!-- 六角形セット -->
-                <div class="col-lg-6 order-lg-1">
-                    <div class="my-2 hexagon-wrapper">
-                        <div class="hexagon-background"></div>
-                        <div class="hexagon">
-                            <img src="img/MSC.jpeg" />
+        <div class="container-fluid px-4 px-md-5">
+            <div class="d-flex left-align">
+                <div
+                    class="row align-items-center my-3 bg-white rounded-5 shadow p-3 p-md-4"
+                >
+                    <!-- 六角形セット -->
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="my-2 hexagon-wrapper">
+                            <div class="hexagon-background"></div>
+                            <div class="hexagon">
+                                <img src="img/MSC.jpeg" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- jsonを読み込んで文章を表示 -->
-                <div class="col-lg-6 order-lg-2 py-2">
-                    <div id="msc-content" class="fs-5 text-center"></div>
+                    <!-- jsonを読み込んで文章を表示 -->
+                    <div class="col-lg-6 order-lg-2 py-2">
+                        <div
+                            id="msc-content"
+                            class="fs-5 text-center"
+                            style="white-space: pre-line"
+                        ></div>
+                    </div>
                 </div>
             </div>
-            <div
-                class="row align-items-center my-3 bg-white rounded shadow px-3 px-md-4"
-                style="--bs-bg-opacity: 0.9"
-
-            >
-                <!-- 六角形セット -->
-                <div class="col-lg-6 order-lg-2">
-                    <div class="my-2 hexagon-wrapper">
-                        <div class="hexagon-background"></div>
-                        <div class="hexagon">
-                            <img src="img/moji.jpg" />
+            <div class="d-flex right-align">
+                <div
+                    class="row align-items-center my-3 bg-white rounded-5 shadow p-3 p-md-4"
+                    style="--bs-bg-opacity: 0.9"
+                >
+                    <!-- 六角形セット -->
+                    <div class="col-lg-6 order-lg-2">
+                        <div class="my-2 hexagon-wrapper">
+                            <div class="hexagon-background"></div>
+                            <div class="hexagon">
+                                <img src="img/moji.jpg" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- jsonを読み込んで文章を表示 -->
-                <div class="col-lg-6 order-lg-1 py-2">
-                    <div id="moji-content" class="fs-5 text-center"></div>
+                    <!-- jsonを読み込んで文章を表示(\nを改行に変換) -->
+                    <div class="col-lg-6 order-lg-1 py-2">
+                        <div id="moji-content" class="fs-5 text-center"></div>
+                    </div>
                 </div>
             </div>
-            <div
-                class="row align-items-center my-3 bg-white rounded shadow px-3 px-md-4"
-                style="--bs-bg-opacity: 0.9"
-                <!-- 六角形セット -->
-                <div class="col-lg-6 order-lg-1">
-                    <div class="my-2 hexagon-wrapper">
-                        <div class="hexagon-background"></div>
-                        <div class="hexagon">
-                            <img src="img/miakks.png" />
+            <div class="d-flex left-align">
+                <div
+                    class="row align-items-center my-3 bg-white rounded-5 shadow p-3 p-md-4"
+                    style="--bs-bg-opacity: 0.9"
+                >
+                    <!-- 六角形セット -->
+                    <div class="col-lg-6 order-lg-1">
+                        <div class="my-2 hexagon-wrapper">
+                            <div class="hexagon-background"></div>
+                            <div class="hexagon">
+                                <img src="img/miakks.png" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- jsonを読み込んで文章を表示 -->
-                <div class="col-lg-6 order-lg-2">
-                    <h1 class="text-center">Miakks</h1>
+                    <!-- jsonを読み込んで文章を表示 -->
+                    <div class="col-lg-6 order-lg-2">
+                        <h1 class="text-center">Miakks</h1>
+                    </div>
                 </div>
             </div>
         </div>

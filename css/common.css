@@ -2,46 +2,60 @@
 
 :root {
     --main-bg: #c8ff2a;
-    --sub-bg: #ffe100;
-    --accent-gold: #dbb418;
+    --sub-bg: #dbb418;
+    --accent-green: #c8ff2a;
+    --accent-gold: #ffe100;
     --font-color: #376f5d;
     --shadow: rgba(0, 0, 0, 0.5);
     --font-main: "Zen Kurenaido", sans-serif;
 }
 
 /* ↓↓↓↓↓↓ ヘッダーメニュー用 ↓↓↓↓↓↓ */
-/* ヘッダー背景色 */
+/* ヘッダーの背景色とサイズ */
 .navbar {
     background-color: rgba(255, 255, 255, 0.95);
     height: 90px;
 }
 
+/* ヘッダーのサイズ - 768px以下 */
+@media (max-width: 768px) {
+    .navbar {
+        height: 70px;
+    }
+}
 
 /* ロゴのサイズ */
 .logo-img {
     height: 70px;
 }
 
+/* ロゴのサイズ - 768px以下 */
 @media (max-width: 768px) {
     .logo-img {
         height: 50px;
     }
 }
 
-@media (max-width: 480px) {
-    .logo-img {
-        height: 30px;
-    }
+/* ロゴのホバーエフェクト */
+.logo-img:hover {
+    opacity: 0.5;
 }
 
 /* メニュータイトル */
-.offcanvas {
+.offcanvas-title {
     width: 500px !important;
     font-family: var(--font-main);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--main-bg);
-    text-shadow: 1.5px 1.5px 2px var(--font-color);
+    text-shadow: 1px 1px 2px var(--font-color);
     transition: all 0.3s ease-in-out;
+}
+
+/* メニュータイトル - 768px以下 */
+@media (max-width: 768px) {
+    .offcanvas-title {
+        font-size: 1rem;
+    }
 }
 
 /* メニュー文字 */
@@ -49,14 +63,32 @@
     font-family: var(--font-main);
     font-size: 1.8rem;
     color: var(--font-color);
-    border-bottom: 2px solid var(--sub-bg);
-    padding-bottom: 2px;
     text-shadow: 1px 1px 2px var(--shadow);
     transition: all 0.3s ease-in-out;
-    margin-bottom: 10px;
 }
 
-/* メニュー文字(最下) */
+/* メニュー文字 - 991px以下 */
+@media (max-width: 991px) {
+    .offcanvas-body .nav-link {
+        font-family: var(--font-main);
+        font-size: 1.8rem;
+        color: var(--font-color);
+        border-bottom: 2px solid var(--sub-bg);
+        padding-bottom: 2px;
+        text-shadow: 1px 1px 2px var(--shadow);
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 10px;
+    }
+}
+
+/* メニュー文字 - 768px以下 */
+@media (max-width: 768px) {
+    .offcanvas-body .nav-link {
+        font-size: 1.4rem;
+    }
+}
+
+/* 「sustainable-honeybees-park-project」 */
 .offcanvas-body .nav-link.foot {
     font-family: var(--font-main);
     font-size: 1.2rem;
@@ -74,22 +106,31 @@
     text-align: center;
 }
 
-/* ホバー時のエフェクト */
+@media (min-width: 992px) {
+    .offcanvas-body .nav-link.foot {
+        display: none;
+    }
+}
+
+/* メニュー文字のホバーエフェクト */
 .offcanvas-body .nav-link:hover {
-    color: var(--main-bg);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    color: var(--accent-green);
+    text-shadow: 1.5px 1.5px 2px var(--font-color);
     transform: translateX(5px);
 }
 
+/* 「sustainable-honeybees-park-project」のホバーエフェクト*/
 .offcanvas-body .nav-link.foot:hover {
-    color: var(--main-bg);
-    text-shadow: none;
+    color: var(--accent-green);
+    text-shadow: 1px 1px 2px var(--font-color);
     transform: none;
 }
 
-/* メニュー背景のグラデーション */
-.offcanvas.offcanvas-gradient {
-    background: linear-gradient(to bottom, white, var(--main-bg));
+/* メニュー背景のグラデーション - 991px以下 */
+@media (max-width: 991px) {
+    .offcanvas.offcanvas-gradient {
+        background: linear-gradient(to bottom, white, var(--main-bg));
+    }
 }
 
 /* メニューの全画面表示 - 768px以下 */
@@ -103,15 +144,56 @@
 
 /* ↓↓↓↓↓↓ 基本設定用 ↓↓↓↓↓↓ */
 body {
-    background: linear-gradient(to bottom, white, var(--main-bg));
+    background: linear-gradient(
+        to bottom,
+        white,
+        var(--main-bg),
+        var(--font-color)
+    );
+}
+
+.page-title {
+    font-family: var(--font-main);
+    font-size: 3rem;
+    color: var(--main-bg);
+    text-shadow: 2px 2px 2px var(--font-color);
+    text-align: center;
+    background-color: white;
 }
 /* ↑↑↑↑↑↑ 基本設定用 ↑↑↑↑↑↑ */
+
+/* ↓↓↓↓↓↓ groups.html用 ↓↓↓↓↓↓ */
+.d-flex {
+    justify-content: center;
+}
+
+@media (min-width: 1200px) {
+    .left-align {
+        justify-content: flex-start;
+    }
+}
+@media (min-width: 1200px) {
+    .right-align {
+        justify-content: flex-end;
+    }
+}
+
+.row {
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .row {
+        width: 85%;
+    }
+}
+/* ↑↑↑↑↑↑ groups.html用 ↑↑↑↑↑↑ */
 
 /* ↓↓↓↓↓↓ 六角形の描画用 ↓↓↓↓↓↓ */
 .hexagon-wrapper {
     position: relative;
-    width: 420px;
-    height: 370px;
+    width: 280px;
+    height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,8 +202,8 @@ body {
 
 /* 背景用の大きい六角形 */
 .hexagon-background {
-    width: 420px;
-    height: 370px;
+    width: 280px;
+    height: 250px;
     background: var(--sub-bg); /* ゴールドっぽい色 */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     position: absolute;
@@ -129,8 +211,8 @@ body {
 
 /* 手前の六角形 */
 .hexagon {
-    width: 400px;
-    height: 350px;
+    width: 250px;
+    height: 230px;
     background: white;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     display: flex;
@@ -141,8 +223,8 @@ body {
 
 /* 六角形内画像 */
 .hexagon img {
-    width: 400px;
-    height: 350px;
+    width: 250px;
+    height: 230px;
     object-fit: cover; /* 背景に収まるようにする */
     /* clip-path: inherit;*/
 }
@@ -161,8 +243,8 @@ hexagon-wrapper >= hexagon-background > hexagon
 hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角形になるよ
 */
 
-/* レスポンシブデザイン - 768px以下 */
-@media (max-width: 768px) {
+/* レスポンシブデザイン - 480px以上 */
+@media (min-width: 480px) {
     .hexagon-wrapper {
         width: 300px;
         height: 270px;
@@ -184,26 +266,26 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     }
 }
 
-/* レスポンシブデザイン - 480px以下 */
-@media (max-width: 480px) {
+/* レスポンシブデザイン - 992px以上 */
+@media (min-width: 992px) {
     .hexagon-wrapper {
-        width: 250px;
-        height: 230px;
+        width: 400px;
+        height: 360px;
     }
 
     .hexagon-background {
-        width: 250px;
-        height: 230px;
+        width: 400px;
+        height: 360px;
     }
 
     .hexagon {
-        width: 230px;
-        height: 200px;
+        width: 380px;
+        height: 340px;
     }
 
     .hexagon img {
-        width: 230px;
-        height: 200px;
+        width: 380px;
+        height: 340px;
     }
 }
 /* ↑↑↑↑↑↑ 六角形の描画用 ↑↑↑↑↑↑ */
