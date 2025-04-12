@@ -133,7 +133,7 @@
             </div>
             <div
                 class="row align-items-center my-3 bg-white rounded shadow px-3 px-md-4"
-                style="--bs-bg-opacity: 0.9"
+                style="--bs-bg-opacity: 0.9">
                 <!-- 六角形セット -->
                 <div class="col-lg-6 order-lg-1">
                     <div class="my-2 hexagon-wrapper">
@@ -145,7 +145,7 @@
                 </div>
                 <!-- jsonを読み込んで文章を表示 -->
                 <div class="col-lg-6 order-lg-2">
-                    <h1 class="text-center">Miakks</h1>
+                    <div id="miakks-content" class="fs-5 text-center"></div>
                 </div>
             </div>
         </div>
@@ -160,6 +160,7 @@
             //　jsonを読み込んで文章を表示
             loadOrganizationData("data/msc.json", "msc-content");
             loadOrganizationData("data/moji.json", "moji-content");
+            loadOrganizationData("data/miakks.json", "miakks-content");
         </script>
     </body>
 </html>
