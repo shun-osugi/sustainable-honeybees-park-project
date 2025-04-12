@@ -26,7 +26,7 @@
     <body class="back-ground-color">
         <!-- ヘッダー -->
         <div id="header-placeholder"></div>
-        
+
         <h2 class="my-3 my-md-4 p-3 px-md-4 page-title">
             <span class="p-2">・関連団体</span>
         </h2>
@@ -34,7 +34,7 @@
         <div class="container-fluid px-4 px-md-5">
             <div class="d-flex left-align">
                 <div
-                    class="row align-items-center my-3 bg-white rounded-5 shadow p-3 p-md-4"
+                    class="row align-items-center mb-4 bg-white rounded-5 shadow p-3 p-md-4"
                     style="--bs-bg-opacity: 0.95"
                 >
                     <!-- 六角形セット -->
@@ -50,7 +50,7 @@
                     <div class="col-lg-6 order-lg-2 py-2">
                         <div
                             id="msc-content"
-                            class="fs-5 text-center"
+                            class="text-content text-center"
                             style="white-space: pre-line"
                         ></div>
                     </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="d-flex right-align">
                 <div
-                    class="row align-items-center my-3 bg-white rounded-5 shadow p-3 p-md-4"
+                    class="row align-items-center mb-4 bg-white rounded-5 shadow p-3 p-md-4"
                     style="--bs-bg-opacity: 0.95"
                 >
                     <!-- 六角形セット -->
@@ -72,13 +72,16 @@
                     </div>
                     <!-- jsonを読み込んで文章を表示(\nを改行に変換) -->
                     <div class="col-lg-6 order-lg-1 py-2">
-                        <div id="moji-content" class="fs-5 text-center"></div>
+                        <div
+                            id="moji-content"
+                            class="text-content text-center"
+                        ></div>
                     </div>
                 </div>
             </div>
             <div class="d-flex left-align">
                 <div
-                    class="row align-items-center my-3 bg-white rounded-5 shadow p-3 p-md-4"
+                    class="row align-items-center mb-4 bg-white rounded-5 shadow p-3 p-md-4"
                     style="--bs-bg-opacity: 0.95"
                 >
                     <!-- 六角形セット -->
@@ -92,7 +95,10 @@
                     </div>
                     <!-- jsonを読み込んで文章を表示 -->
                     <div class="col-lg-6 order-lg-2">
-                        <div id="miakks-content" class="fs-5 text-center"></div>
+                        <div
+                            id="miakks-content"
+                            class="text-content text-center"
+                        ></div>
                     </div>
                 </div>
             </div>
@@ -108,19 +114,20 @@
         ></script>
         <!-- 共通ヘッダー読み込みスクリプト -->
         <script>
-            fetch('header.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-            });
+            fetch("header.html")
+                .then((res) => res.text())
+                .then((data) => {
+                    document.getElementById("header-placeholder").innerHTML =
+                        data;
+                });
         </script>
         <script>
             // 外部HTML読み込み（ヘッダーと同じように）
-            fetch('footer.html')
-              .then(res => res.text())
-              .then(data => {
-                document.getElementById('footer').innerHTML = data;
-              });
+            fetch("footer.html")
+                .then((res) => res.text())
+                .then((data) => {
+                    document.getElementById("footer").innerHTML = data;
+                });
         </script>
         <script src="js/common.js"></script>
         <script>
