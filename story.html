@@ -1,159 +1,216 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        />
-        <link rel="stylesheet" href="css/common.css" />
-        <style>
-            .hex-row {
-                margin-bottom: 120px;
-                position: relative;
-            }
-            .hex-shift-down {
-                margin-top: 180px;
-            }
-            .hexagon-wrapper {
-                margin-right: 0 !important;
-                margin-left: 0 !important;
-            }
-            .hex-small,
-            .hex-medium,
-            .hex-large {
-                position: absolute;
-            }
-            .hex-small {
-                width: 60px !important;
-                height: 52px !important;
-                top: 20px;
-                left: 10%;
-            }
-            .hex-medium {
-                width: 90px !important;
-                height: 78px !important;
-                top: 60px;
-                right: 12%;
-            }
-            .hex-large {
-                width: 120px !important;
-                height: 104px !important;
-                top: -30px;
-                left: 40%;
-            }
-            .hex-small .hexagon-background,
-            .hex-small .hexagon,
-            .hex-medium .hexagon-background,
-            .hex-medium .hexagon,
-            .hex-large .hexagon-background,
-            .hex-large .hexagon {
-                width: 100%;
-                height: 100%;
-            }
-            .hex-small .hexagon-background,
-            .hex-medium .hexagon-background,
-            .hex-large .hexagon-background {
-                background-color: #ffd700;
-            }
-            .hex-small .hexagon,
-            .hex-medium .hexagon,
-            .hex-large .hexagon {
-                background-color: #fffacd;
-            }
-            .hex-divider {
-                position: relative;
-                height: 160px;
-                margin: 60px 0;
-            }
-        </style>
-        <title>制作ヒストリー</title>
-    </head>
-    <body class="d-flex flex-column min-vh-100">
-        <!-- ヘッダー -->
-        <div id="header-placeholder"></div>
-        <h2>制作ヒストリー</h2>
-        <p>This is the 制作秘話 page.</p>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- 共通ヘッダー読み込みスクリプト -->
-        <script>
-            fetch('header.html')
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/history.css" />
+    <title>制作ヒストリー</title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div id="header-placeholder"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        fetch('header.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
             });
-        </script>
-        <div class="container py-5">
-            <!-- 1段目 -->
-            <div
-                class="d-flex flex-wrap justify-content-center align-items-start hex-row"
-            >
-                <div class="hexagon-wrapper">
-                    <div class="hexagon-background"></div>
-                    <div class="hexagon">
-                        <img src="img/moji.jpg" alt="説明画像1" />
-                    </div>
-                </div>
-                <div class="hexagon-wrapper hex-shift-down">
-                    <div class="hexagon-background"></div>
-                    <div class="hexagon d-flex flex-column text-center">
-                        <p>サステナハニー公園プロジェクト</p>
-                        <p>何をしたかの説明文</p>
-                        <p>～～～～～～～～～～～～</p>
-                    </div>
+    </script>
+
+    <div class="header-box container my-4 p-4">
+        <h1>制作ヒストリー</h1>
+        <p>テストテストテスト</p>
+    </div>
+
+    <div class="container py-5">
+        <!-- 1.サステナハニー公園プロジェクトについて -->
+        <div class="d-flex flex-wrap justify-content-center align-items-start hex-row">
+            <div class="hexagon-wrapper">
+                <div class="hexagon-background"></div>
+                <div class="hexagon"><img src="img/history1.png" alt="説明画像1" /></div>
+            </div>
+            <div class="hexagon-wrapper text-hex hex-shift-down">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <h3>サステナハニー公園プロジェクト</h3>
+                    <p>サステナハニー公園プロジェクトは、環境教育と地域貢献を通じて持続可能な社会を目指す取り組みです。</p>
                 </div>
             </div>
-
-            <!-- 装飾：ランダムなサイズと位置 -->
-            <div class="hex-divider">
-                <div class="hexagon-wrapper hex-small">
-                    <div class="hexagon-background"></div>
-                    <div class="hexagon"></div>
-                </div>
-                <div class="hexagon-wrapper hex-medium">
-                    <div class="hexagon-background"></div>
-                    <div class="hexagon"></div>
-                </div>
-                <div class="hexagon-wrapper hex-large">
-                    <div class="hexagon-background"></div>
-                    <div class="hexagon"></div>
-                </div>
-            </div>
-
-            <!-- 2段目 -->
-            <div
-                class="d-flex flex-wrap justify-content-center align-items-start hex-row"
-            >
-                <div class="hexagon-wrapper hex-shift-down">
-                    <div class="hexagon-background"></div>
-                    <div class="hexagon d-flex flex-column text-center">
-                        <p>VGともじもじ</p>
-                        <p>何をしたかの説明文</p>
-                        <p>～～～～～～～～～～～～</p>
-                    </div>
-                </div>
-                <div class="hexagon-wrapper">
-                    <div class="hexagon-background"></div>
-                    <div class="hexagon">
-                        <img src="img/moji.jpg" alt="説明画像2" />
-                    </div>
+            <div class="hexagon-wrapper text-hex">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <p>このうち、名城大学の学生団体である「VISION GUILD（以下、VG）」と「もじもじ」 は、
+                        本プロジェクトの一環として「サステナ看板」の作成に産学連携で携わりました。</p>
+                    <p>この看板はプロジェクトの理念を伝える役割を果たし、設置場所を取り巻く多様な人々が本プロジェクトに
+                        参加する後押しとなるような存在になることを目指しています。
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- フッター読み込み -->
-        <div id="footer" class="bg-light text-center p-3 mt-auto"></div>
-        <script>
-            // 外部HTML読み込み（ヘッダーと同じように）
-            fetch('footer.html')
-              .then(res => res.text())
-              .then(data => {
+
+
+
+        <!-- 2.VGともじもじ -->
+        <div class="d-flex flex-wrap justify-content-center align-items-start hex-row">
+            <div class="hexagon-wrapper text-hex hex-shift-down">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <h3>VGともじもじ</h3>
+                    <p>VGは以前から学外の主体（企業・自治体・NPOなど）との連携活動を行いたいと考えていました。</p>
+                    
+                </div>
+            </div>
+            <div class="hexagon-wrapper">
+                <div class="hexagon-background"></div>
+                <div class="hexagon"><img src="img/moji.jpg" alt="説明画像2" /></div>
+            </div>
+            <div class="hexagon-wrapper text-hex">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <p>そんな時、名城大学社会連携センターを通して、有限会社名古屋工芸（以下、名工）から今回のお話をいただいたことをきっかけに、
+                        複数関係者とともに本プロジェクトを進めることなりました。</p>
+                    <p>この過程で、看板を作品として完成させるために、「見る」ことを「書く」ことにつなげる創造活動を学内外で展開するもじもじも加わりました。</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 3.キックオフ・ミーティング（第1回関係者会議） -->
+        <div class="d-flex flex-wrap justify-content-center align-items-start hex-row">
+            <div class="hexagon-wrapper">
+                <div class="hexagon-background"></div>
+                <div class="hexagon"><img src="img/history3.png" alt="説明画像3" /></div>
+            </div>
+            <div class="hexagon-wrapper text-hex hex-shift-down">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <h3>キックオフ・ミーティング（第1回関係者会議）</h3>
+                    <p>この日は大学で、看板制作に向けて、具体的にどのようなものにするのかを関係者一同で話し合いました。</p>
+                </div>
+            </div>
+            <div class="hexagon-wrapper text-hex">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <p>前半は、サステナハニー公園プロジェクトの概要説明、また看板の設置場所の現況や制作における加工技術の話が提示されました。</p>
+                    <p>後半は、アイデア創出のためのワークショップを行い、全員の目的を一致させ、プロジェクトを進める上での結束をつくりました。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4.コンセプトを固める（担当：VG）-->
+        <div class="d-flex flex-wrap justify-content-center align-items-start hex-row">
+            <div class="hexagon-wrapper text-hex hex-shift-down">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <h3>コンセプトを固める（担当：VG）</h3>
+                    <p>VGのメンバーが実際のデザイン制作担当であるもじもじに引き継ぐため、前回話し合った内容を基にして、
+                        看板デザインのアイデアや制作にあたっての条件をまとめました。</p>
+                </div>
+            </div>
+            <div class="hexagon-wrapper">
+                <div class="hexagon-background"></div>
+                <div class="hexagon"><img src="img/history4.png" alt="説明画像4" /></div>
+            </div>
+            <div class="hexagon-wrapper text-hex">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <p>「ブレイン・ライティング」「親和図法」「コンセプトシートづくり」という、付箋紙を使用したアイデア創出法を用いて、
+                        思考の枠を広げました。そしてデザインコンセプトをラフ画に起こし、視覚的に分かりやすい形でもじもじへバトンを渡しました。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 5.看板デザインの原案をつくる（担当：もじもじ） -->
+        <div class="d-flex flex-wrap justify-content-center align-items-start hex-row">
+            <div class="hexagon-wrapper">
+                <div class="hexagon-background"></div>
+                <div class="hexagon"><img src="img/history5.png" alt="説明画像5" /></div>
+            </div>
+            <div class="hexagon-wrapper text-hex hex-shift-down">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <h3>看板デザインの原案をつくる<br>（担当：もじもじ）</h3>
+                    <p>VGから提示されたコンセプトを引き受け、もじもじで看板デザインの原案をつくりました。</p>
+                    <p>VGの提案には色々な発想が含まれていたので、それを解釈・再構成し、まとまりのあるデザインになるように、チーム内で話し合いを重ねました。</p>
+                </div>
+            </div>
+            <div class="hexagon-wrapper text-hex">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <p>結果として、もじもじが活動をする上で大事にしている「見ること」の良さもプラスする形を目指しました。
+                        解釈の幅がある絵を提案し、それを見る人が本プロジェクトのメッセージに関して多様に想像力を膨らませる
+                        ことのできるデザインにしていくことにしました。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 6.第2回関係者会議 -->
+        <div class="d-flex flex-wrap justify-content-center align-items-start hex-row">
+            <div class="hexagon-wrapper text-hex hex-shift-down">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <h3>コンセプトを固める（担当：VG）</h3>
+                    <p>本プロジェクトに関わる関係者が再集合し、看板デザインについて打合せを行いました。</p>
+                </div>
+            </div>
+            <div class="hexagon-wrapper">
+                <div class="hexagon-background"></div>
+                <div class="hexagon"><img src="img/history6.jpeg" alt="説明画像6" /></div>
+            </div>
+        </div>
+        <div class="hexagon-wrapper text-hex">
+            <div class="hexagon-background"></div>
+            <div class="hexagon d-flex flex-column text-center">
+                <p>もじもじの原案をもとに、絵の中の細かい要素やテーマ、どういった意図で描かれたのかなどをじっくり話し合いました。
+                    およそ２時間ほど会議が進み、最終的には原案をベースに、メッセージ性の強い作品へと仕上げることが確認されました。
+                </p>
+            </div>
+        </div>
+
+
+        <!-- 7.看板デザインの完成とwebページの制作 -->
+        <div class="d-flex flex-wrap justify-content-center align-items-start hex-row">
+            <div class="hexagon-wrapper">
+                <div class="hexagon-background"></div>
+                <div class="hexagon"><img src="img/miakks.png" alt="説明画像7" /></div>
+            </div>
+            <div class="hexagon-wrapper text-hex hex-shift-down">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <h3>看板デザインの完成と<br>webページの制作</h3>
+                    <p>第2回関係者会議を受け、もじもじがデザインを修正しました。</p>
+                    <p>そして関係者で改めて確認したのち、デザインを完成することができました（デザインの詳細は「制作の意図」にてご覧ください！）。</p>
+                </div>
+            </div>
+            <div class="hexagon-wrapper text-hex">
+                <div class="hexagon-background"></div>
+                <div class="hexagon d-flex flex-column text-center">
+                    <p>また、看板が完成するまでの経緯や、VG・もじもじの思いを発信するために、本webサイトを開設することにしました。
+                        本webサイトは情報工学部所属のVGメンバーやソフトウェア開発を目的とした学生団体「Miakks」が開発しました。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div id="footer" class="bg-light text-center p-3 mt-auto"></div>
+    <script>
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
                 document.getElementById('footer').innerHTML = data;
-              });
-        </script>
-    </body>
+            });
+    </script>
+</body>
 </html>
