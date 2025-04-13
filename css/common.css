@@ -425,7 +425,7 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     background-color: white;
     border: none;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 30px;
     transition: background-color 0.3s, transform 0.2s ease-in-out;
 }
 
