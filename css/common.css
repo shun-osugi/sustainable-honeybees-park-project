@@ -145,6 +145,11 @@
         max-width: 100vw !important;
     }
 }
+
+/* アンダーライン - 767px以下 */
+.navbar {
+    border-bottom: 2px solid var(--accent-gold);
+}
 /* ↑↑↑↑↑↑ ヘッダーメニュー用 ↑↑↑↑↑↑ */
 
 /* ↓↓↓↓↓↓ フッターメニュー用 ↓↓↓↓↓↓ */
@@ -213,6 +218,11 @@ body {
     text-shadow: 2px 2px 2px var(--font-color);
     text-align: center;
     background-color: white;
+    border-top: 2px solid var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+    width: 100%;
+    display: block;
+    padding: 0.5em 0;
 }
 
 /* ページタイトルのサイズ - 480px以上 */
@@ -225,14 +235,14 @@ body {
 /* ページタイトルのサイズ - 768px以上 */
 @media (min-width: 768px) {
     .page-title {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
 }
 
 /* ページタイトルのサイズ - 992px以上 */
 @media (min-width: 992px) {
     .page-title {
-        font-size: 3rem;
+        font-size: 2.6rem;
     }
 }
 /* ↑↑↑↑↑↑ 基本設定用 ↑↑↑↑↑↑ */
