@@ -1,56 +1,13 @@
-.hex-row {
-    margin-bottom: 120px;
-    position: relative;
+/* 文章用六角形（白色）の位置調整 */
+.hexagon-wrapper.text-hex .hexagon {
+    transform: translate(10px, 10px);  /* 右に5px、下に5pxずらす */
 }
-.hex-shift-down {
-    margin-top: 180px;
-}
+
 .hexagon-wrapper {
     margin-right: 0 !important;
     margin-left: 0 !important;
 }
-.hex-small,
-.hex-medium,
-.hex-large {
-    position: absolute;
-}
-.hex-small {
-    width: 60px !important;
-    height: 52px !important;
-    top: 20px;
-    left: 10%;
-}
-.hex-medium {
-    width: 90px !important;
-    height: 78px !important;
-    top: 60px;
-    right: 12%;
-}
-.hex-large {
-    width: 120px !important;
-    height: 104px !important;
-    top: -30px;
-    left: 40%;
-}
-.hex-small .hexagon-background,
-.hex-small .hexagon,
-.hex-medium .hexagon-background,
-.hex-medium .hexagon,
-.hex-large .hexagon-background,
-.hex-large .hexagon {
-    width: 100%;
-    height: 100%;
-}
-.hex-small .hexagon-background,
-.hex-medium .hexagon-background,
-.hex-large .hexagon-background {
-    background-color: #ffd700;
-}
-.hex-small .hexagon,
-.hex-medium .hexagon,
-.hex-large .hexagon {
-    background-color: #fffacd;
-}
+
 .hex-divider {
     position: relative;
     height: 160px;
@@ -67,3 +24,54 @@
     margin-top: -80px;  /* がっつり詰める */
     display: block;     /* flexの影響消す */
 }
+
+/* 縦長画面（スマホ用）の場合 */
+@media (max-width: 768px) and (orientation: portrait) {
+  
+    /* 六角形文章用 非表示 */
+    .hexagon-wrapper.text-hex {
+      display: none;
+    }
+  
+    /* 六角形位置調整用 非表示 */
+    .hex-shift-down {
+      display: none;
+    }
+  
+    /* スマホ用文章ボックス 表示 */
+    .text-box {
+      display: block;
+    }
+  
+    /* スマホ用 角丸白ボックス */
+    .text-container {
+      background-color: white;
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+  
+  
+  /* 横長画面（PCやスマホ横持ち）の場合 */
+  @media (min-width: 769px), (orientation: landscape) {
+  
+    /* 六角形文章用 表示 */
+    .hexagon-wrapper.text-hex {
+      display: block;
+    }
+  
+    /* 六角形位置調整用 表示 */
+    .hex-shift-down {
+      display: block;
+    }
+  
+    /* スマホ用文章ボックス 非表示 */
+    .text-box,
+    .text-container {
+      display: none;
+    }
+  }
+  
