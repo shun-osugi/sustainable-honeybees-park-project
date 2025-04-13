@@ -480,7 +480,7 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
 
     .hotspot[data-id="area3"] {
         top: 0% !important; /* スマホ用の位置調整 */
-        left: 91% !important;
+        left: 87% !important;
     }
 }
 
@@ -507,7 +507,7 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
 
     .hotspot[data-id="area3"] {
         top: -2% !important; /* スマホ用の位置調整 */
-        left: 118% !important;
+        left: 138% !important;
     }
 }
 /* ↑↑↑↑↑↑ 詳細表示用 ↑↑↑↑↑↑ */
