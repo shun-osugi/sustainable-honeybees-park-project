@@ -147,6 +147,54 @@
 }
 /* ↑↑↑↑↑↑ ヘッダーメニュー用 ↑↑↑↑↑↑ */
 
+/* ↓↓↓↓↓↓ フッターメニュー用 ↓↓↓↓↓↓ */
+
+/* SNSリンク各種設定 */
+.fa-instagram {
+    color: white;
+}
+
+.fa-facebook {
+    color: white;
+}
+
+.sns-link:hover i {
+    transform: scale(1.2) !important;
+}
+
+.sns-link:hover i.fa-instagram {
+    filter: drop-shadow(2px 2px 2px #e1306c);
+}
+
+.sns-link:hover i.fa-facebook {
+    filter: drop-shadow(2px 2px 2px #1877f2);
+}
+
+/* お問い合わせのデザイン */
+.question-link {
+    position: relative;
+    width: fit-content;
+    top: 50%;
+    left: 50%;
+    border: 1px solid white;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* お問い合わせのデザイン - 768px以上 */
+@media (min-width: 768px) {
+    .question-link {
+        position: absolute;
+    }
+}
+
+/* お問い合わせのホバー */
+.question-link:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+/* ↑↑↑↑↑↑ フッターメニュー用 ↑↑↑↑↑↑ */
+
 /* ↓↓↓↓↓↓ 基本設定用 ↓↓↓↓↓↓ */
 body {
     background: linear-gradient(
@@ -157,6 +205,7 @@ body {
     );
 }
 
+/* ページタイトルのデザイン */
 .page-title {
     font-family: var(--font-main);
     font-size: 1.5rem;
@@ -166,18 +215,21 @@ body {
     background-color: white;
 }
 
+/* ページタイトルのサイズ - 480px以上 */
 @media (min-width: 480px) {
     .page-title {
         font-size: 2rem;
     }
 }
 
+/* ページタイトルのサイズ - 768px以上 */
 @media (min-width: 768px) {
     .page-title {
         font-size: 2.5rem;
     }
 }
 
+/* ページタイトルのサイズ - 992px以上 */
 @media (min-width: 992px) {
     .page-title {
         font-size: 3rem;
@@ -223,27 +275,6 @@ body {
     }
 }
 /* ↑↑↑↑↑↑ groups.html用 ↑↑↑↑↑↑ */
-
-/* ↓↓↓↓↓↓ snsホバー用 ↓↓↓↓↓↓ */
-.sns-link {
-    text-decoration: none;
-    color: #333;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.sns-link:hover i {
-    transform: scale(1.2) !important;
-}
-
-.question-link {
-    text-decoration: none;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.question-link:hover a {
-    color: blue !important;
-}
-/* ↑↑↑↑↑↑ snsホバー用 ↑↑↑↑↑↑ */
 
 /* ↓↓↓↓↓↓ 六角形の描画用 ↓↓↓↓↓↓ */
 .hexagon-wrapper {
