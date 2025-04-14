@@ -13,24 +13,63 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
-        <link rel="stylesheet" href="css/common.css" />
         <!-- 外部CSSファイルをリンク -->
+        <link rel="stylesheet" href="css/common.css" />
+        <!-- 外部フォントをリンク -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap"
+            rel="stylesheet"
+        />
         <title>タイトル</title>
     </head>
     <body class="d-flex flex-column min-vh-100">
         <!-- ヘッダー -->
         <div id="header-placeholder"></div>
 
-        <!-- 六角形セット -->
-        <div class="my-2 hexagon-wrapper">
-            <div class="hexagon-background"></div>
-            <div class="hexagon">
-                <img src="img/MSC.jpeg" />
+        <!-- ロゴ -->
+        <div
+            class="d-flex justify-content-center align-items-center my-2 my-md-4"
+        >
+            <div class="d-flex align-items-center">
+                <img class="home-icon" src="img/icon.png" alt="アイコン" />
+                <div>
+                    <h5 class="mb-0 home-title">サステナハニー</h5>
+                    <h5 class="mb-0 home-title">公園</h5>
+                    <h5 class="mb-0 home-title">プロジェクト</h5>
+                </div>
             </div>
         </div>
 
-        <p>This is the 制作秘話 page.</p>
+        <div class="container my-2 my-md-4">
+            <!-- タイトル -->
+            <h2 id="section-title" class="page-title">・制作の意図</h2>
 
+            <!-- 画像 -->
+            <div class="image-area rounded-4 my-2 my-md-4">
+                <img
+                    src="img/picture.png"
+                    alt="看板デザイン"
+                    class="img-fluid"
+                />
+            </div>
+
+            <!-- 文章エリア -->
+            <div
+                class="bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
+                style="--bs-bg-opacity: 0.95"
+            >
+                <p id="section-text"></p>
+                <!-- 切り替えボタン -->
+                <div class="text-center">
+                    <button
+                        id="toggle-button"
+                        class="custom-toggle-button text-content rounded-5"
+                    >
+                        ⇆ 絵の物語を覗く
+                    </button>
+                </div>
+            </div>
+        </div>
         <!-- フッター読み込み -->
         <div id="footer" class="text-center p-3 mt-auto"></div>
         <script
@@ -56,5 +95,47 @@
                 });
         </script>
         <script src="js/common.js"></script>
+        <script>
+            const titleEl = document.getElementById("section-title");
+            const textEl = document.getElementById("section-text");
+            const button = document.getElementById("toggle-button");
+
+            let showingFirst = true;
+
+            const firstTitle = "・制作の意図";
+            const firstButtonText = "⇆ 絵の物語を覗く";
+            const secondTitle = "・物語";
+            const secondButtonText = "⇆ 制作の意図に戻る";
+
+            let intentionContent = "";
+            let taleContent = "";
+
+            // JSONを読み込んで内容をセット
+            fetch("data/intention.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    intentionContent = data.text;
+                    textEl.innerHTML = intentionContent; // 初期表示
+                });
+
+            fetch("data/tale.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    taleContent = data.text;
+                });
+
+            button.addEventListener("click", () => {
+                if (showingFirst) {
+                    titleEl.textContent = secondTitle;
+                    textEl.innerHTML = taleContent;
+                    button.innerText = secondButtonText;
+                } else {
+                    titleEl.textContent = firstTitle;
+                    textEl.innerHTML = intentionContent;
+                    button.innerText = firstButtonText;
+                }
+                showingFirst = !showingFirst;
+            });
+        </script>
     </body>
 </html>
