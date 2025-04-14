@@ -10,6 +10,10 @@
     --font-main: "Zen Kurenaido", sans-serif;
 }
 
+body {
+    padding-top: 60px; /* ヘッダーの高さ分調整 */
+}
+
 /* ↓↓↓↓↓↓ ヘッダーメニュー用 ↓↓↓↓↓↓ */
 /* ヘッダーの背景色とサイズ */
 .navbar {
