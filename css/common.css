@@ -400,13 +400,12 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
 .image-area img {
     width: 100%;
     min-width: 650px;
-    height: 280px;
     display: block;
 }
 .hotspot {
     position: absolute;
-    width: 90px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     border: 2px solid red;
     cursor: pointer;
@@ -439,7 +438,7 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
 }
 
 .description {
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 20px;
     border-top: 1px solid #ccc;
     background-color: white;
@@ -470,58 +469,115 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
     transform: translateY(0);
 }
 
-/* スマホ用 (画面幅768px以下) */
-@media (max-width: 768px) {
+/* iPad用 (画面幅1200px以下) */
+@media (max-width: 1200px) {
     .hotspot {
         position: absolute;
-        width: 65px;
-        height: 75px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         border: 2px solid red;
         cursor: pointer;
         transition: transform 0.3s;
     }
+}
 
-    .hotspot[data-id="area1"] {
-        top: 62% !important; /* スマホ用の位置調整 */
-        left: 44% !important;
+/* iPad用 (画面幅992px以下) */
+@media (max-width: 992px) {
+    .hotspot {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
     }
+}
 
-    .hotspot[data-id="area2"] {
-        top: 66% !important; /* スマホ用の位置調整 */
-        left: 84% !important;
+/* スマホ用 (画面幅768px以下) */
+@media (max-width: 768px) {
+    .image-area{
+        aspect-ratio: 4 / 1;
     }
-
-    .hotspot[data-id="area3"] {
-        top: 0% !important; /* スマホ用の位置調整 */
-        left: 87% !important;
+    .hotspot {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    .description img {
+        margin-top: 70px;
+        width: 80%;
+        max-width: 800px; /* 最大幅を800pxに制限 */
+        height: auto;
+        display: block;
     }
 }
 
 @media (max-width: 480px) {
+    .image-area{
+        aspect-ratio: 3 / 1;
+    }
     .hotspot {
         position: absolute;
-        width: 65px;
-        height: 75px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         border: 2px solid red;
         cursor: pointer;
         transition: transform 0.3s;
+        }
+    .description h2,
+    .description p {
+        text-align: center;
+        font-size: 0.8rem;
     }
-
-    .hotspot[data-id="area1"] {
-        top: 62% !important; /* スマホ用の位置調整 */
-        left: 57% !important;
+    .arrow-buttons button,
+    .back-buttons button {
+        font-size: 15px;
     }
-
-    .hotspot[data-id="area2"] {
-        top: 66% !important; /* スマホ用の位置調整 */
-        left: 110% !important;
+    .description img {
+        margin-top: 65px;
+        width: 80%;
+        max-width: 800px; /* 最大幅を800pxに制限 */
+        height: auto;
+        display: block;
     }
+}
 
-    .hotspot[data-id="area3"] {
-        top: -2% !important; /* スマホ用の位置調整 */
-        left: 138% !important;
+@media (max-width: 320px) {
+    .image-area{
+        aspect-ratio: 1.8/ 1;
+    }
+    .hotspot {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+        }
+    .description h2,
+    .description p {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .arrow-buttons button,
+    .back-buttons button {
+        font-size: 15px;
+    }
+    .description img {
+        margin-top: 75px;
+        width: 80%;
+        max-width: 800px; /* 最大幅を800pxに制限 */
+        height: auto;
+        display: block;
     }
 }
 /* ↑↑↑↑↑↑ 詳細表示用 ↑↑↑↑↑↑ */
+
