@@ -1,0 +1,81 @@
+.text-content {
+  display: none;
+}
+
+/* 六角形のグループ（３つでひとかたまり） */
+.hexagon-group {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  flex-wrap: wrap;
+  margin-bottom: 200px;   /* 下の余白 */
+}
+
+/* 左右の六角形を寄せる */
+.hexagon-group > .hexagon-wrapper:nth-child(1) {
+  margin-right: -5px;
+}
+
+.hexagon-group > .hexagon-wrapper:nth-child(2) {
+  margin-left: -5px;
+}
+
+.hexagon-group .bottom-hex {
+  position: absolute;
+  top: 265px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hexagon div {
+  text-align: center;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .hexagon-group {
+    display: block;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px auto;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: static;
+  }
+
+  .hexagon-group > .hexagon-wrapper:nth-child(1),
+  .hexagon-group > .hexagon-wrapper:nth-child(2) {
+    margin: 0 auto;
+    position: static !important;
+  }
+
+  .hexagon-group .bottom-hex {
+    display: none;
+  }
+
+  .hexagon-group .hexagon-wrapper:nth-child(2) {
+    display: none;
+  }
+
+  .hexagon-group .text-content {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .hexagon img {
+    width: 80%;
+    height: auto;
+    clip-path: none;
+  }
+}
+
+.hexagon-group h2 {
+  font-size: 1.5rem; /* お好みで調整可能 */
+}
+
+.hexagon-group:last-of-type {
+  margin-bottom: 300px; /* お好みのサイズに調整 */
+}
