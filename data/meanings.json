@@ -1,0 +1,20 @@
+[
+    {
+        "id": "area1",
+        "title": "闘鶏",
+        "description": "「反戦・核兵器廃絶」の象徴",
+        "image": "img/Skull.png"
+    },
+    {
+        "id": "area2",
+        "title": "気球",
+        "description": "「自由・無限の可能性」の象徴",
+        "image": "img/air_balloon.png"
+    },
+    {
+        "id": "area3",
+        "title": "三日月",
+        "description": "「再生・新たな始まり・幸運の前兆」の象徴",
+        "image": "img/crescent_moon.png"
+    }
+]
