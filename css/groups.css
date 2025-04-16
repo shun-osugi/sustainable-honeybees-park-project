@@ -1,0 +1,38 @@
+/* groups.css */
+
+/* 左右に寄せる */
+.d-flex {
+    justify-content: center;
+}
+
+@media (min-width: 1200px) {
+    .left-align {
+        justify-content: flex-start;
+    }
+}
+@media (min-width: 1200px) {
+    .right-align {
+        justify-content: flex-end;
+    }
+}
+
+/* 幅調整 */
+.row {
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .row {
+        width: 85%;
+    }
+}
+
+.text-content {
+    font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+    .text-content {
+        font-size: 1.4rem;
+    }
+}

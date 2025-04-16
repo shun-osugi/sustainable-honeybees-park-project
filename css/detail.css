@@ -1,0 +1,173 @@
+/* detail.css */
+.hotspot {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid red;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.hotspot:hover {
+    transform: scale(1.1);
+}
+
+/* ◀▶ ボタンを中心に配置 */
+.arrow-buttons button,
+.back-buttons button {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.arrow-buttons button:hover,
+.back-buttons button:hover {
+    background-color: rgba(169, 169, 169, 1); /* ホバー時に背景を濃く */
+}
+
+.description {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: var(--white-bg);
+    display: none;
+}
+
+.description.show {
+    display: block;
+}
+
+.description img {
+    margin-top: 35px;
+    width: 90%;
+    max-width: 800px; /* 最大幅を800pxに制限 */
+    height: auto;
+    display: block;
+}
+
+.description h2,
+.description p {
+    text-align: center;
+}
+
+.description.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* iPad用 (画面幅1200px以下) */
+@media (max-width: 1200px) {
+    .hotspot {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+}
+
+/* iPad用 (画面幅992px以下) */
+@media (max-width: 992px) {
+    .hotspot {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+}
+
+/* スマホ用 (画面幅768px以下) */
+@media (max-width: 768px) {
+    .image-area {
+        aspect-ratio: 4 / 1;
+    }
+    .hotspot {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    .description img {
+        margin-top: 70px;
+        width: 80%;
+        max-width: 800px; /* 最大幅を800pxに制限 */
+        height: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-area {
+        aspect-ratio: 3 / 1;
+    }
+    .hotspot {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    .description h2,
+    .description p {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    .arrow-buttons button,
+    .back-buttons button {
+        font-size: 15px;
+    }
+    .description img {
+        margin-top: 65px;
+        width: 80%;
+        max-width: 800px; /* 最大幅を800pxに制限 */
+        height: auto;
+        display: block;
+    }
+}
+
+@media (max-width: 320px) {
+    .hotspot {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid red;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    .description h2,
+    .description p {
+        text-align: center;
+        font-size: 0.7rem;
+    }
+    .arrow-buttons button,
+    .back-buttons button {
+        font-size: 15px;
+    }
+    .description img {
+        margin-top: 75px;
+        width: 80%;
+        max-width: 800px; /* 最大幅を800pxに制限 */
+        height: auto;
+        display: block;
+    }
+}
