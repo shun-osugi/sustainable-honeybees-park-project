@@ -1,81 +1,114 @@
+/* home.css */
+
 .text-content {
-  display: none;
+    display: none;
 }
 
 /* 六角形のグループ（３つでひとかたまり） */
 .hexagon-group {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: relative;
-  flex-wrap: wrap;
-  margin-bottom: 200px;   /* 下の余白 */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-right: 80px;
 }
 
-/* 左右の六角形を寄せる */
+.hexagon-group .top-hex {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 六角形の位置調整 */
 .hexagon-group > .hexagon-wrapper:nth-child(1) {
-  margin-right: -5px;
+    margin-bottom: 100px;
+    margin-right: 35px;
 }
 
 .hexagon-group > .hexagon-wrapper:nth-child(2) {
-  margin-left: -5px;
-}
-
-.hexagon-group .bottom-hex {
-  position: absolute;
-  top: 265px;
-  left: 50%;
-  transform: translateX(-50%);
+    margin-top: 100px;
+    margin-left: 35px;
 }
 
 .hexagon div {
-  text-align: center;
+    text-align: center;
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
-  .hexagon-group {
-    display: block;
-    background: white;
-    border-radius: 20px;
-    padding: 20px;
-    margin: 30px auto;
-    width: 90%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    position: static;
-  }
+@media (max-width: 991px) {
+    .hexagon-group {
+        display: block;
+        background: white;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 30px auto;
+        width: 90%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        position: static;
+    }
 
-  .hexagon-group > .hexagon-wrapper:nth-child(1),
-  .hexagon-group > .hexagon-wrapper:nth-child(2) {
-    margin: 0 auto;
-    position: static !important;
-  }
+    .hexagon-group > .hexagon-wrapper:nth-child(1),
+    .hexagon-group > .hexagon-wrapper:nth-child(2) {
+        margin: 0 auto;
+        position: static !important;
+    }
 
-  .hexagon-group .bottom-hex {
-    display: none;
-  }
+    .hexagon-group .bottom-hex {
+        display: none;
+    }
 
-  .hexagon-group .hexagon-wrapper:nth-child(2) {
-    display: none;
-  }
+    .hexagon-group .hexagon-wrapper:nth-child(2) {
+        display: none;
+    }
 
-  .hexagon-group .text-content {
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .hexagon img {
-    width: 80%;
-    height: auto;
-    clip-path: none;
-  }
+    .hexagon-group .text-content {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
 }
 
 .hexagon-group h2 {
-  font-size: 1.5rem; /* お好みで調整可能 */
+    font-size: 1.5rem; /* お好みで調整可能 */
 }
 
 .hexagon-group:last-of-type {
-  margin-bottom: 300px; /* お好みのサイズに調整 */
+    margin-bottom: 300px; /* お好みのサイズに調整 */
+}
+
+.story-title {
+    font-size: 0.6rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px white;
+}
+
+@media (min-width: 480px) {
+    .story-title {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .story-title {
+        font-size: 1rem;
+    }
+}
+
+.story-text {
+    font-size: 0.4rem;
+    text-shadow: 2px 2px 4px white;
+}
+
+@media (min-width: 480px) {
+    .story-text {
+        font-size: 0.6rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .story-text {
+        font-size: 0.8rem;
+    }
 }

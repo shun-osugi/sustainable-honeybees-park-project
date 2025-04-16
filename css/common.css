@@ -297,6 +297,13 @@ body {
     /* clip-path: inherit;*/
 }
 
+.hexagon p {
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    height: 90%;
+}
+
 /* 全てを囲って真ん中に綺麗になるように配置 */
 /* 特にこの三行で指定
 display: flex;
@@ -355,6 +362,20 @@ hexagon imgのなかの"clip-path: inherit;"を有効化すると画像も六角
         width: 380px;
         height: 340px;
     }
+}
+
+/* 拡大六角形 */
+.large-hexagon .hexagon-wrapper {
+    transform: scale(1.4);
+}
+.large-hexagon .hexagon-background {
+    transform: scale(1.4);
+}
+.large-hexagon .hexagon {
+    transform: scale(1.4);
+}
+.large-hexagon .hexagon img {
+    transform: scale(1.4);
 }
 /* ↑↑↑↑↑↑ 六角形の描画用 ↑↑↑↑↑↑ */
 
