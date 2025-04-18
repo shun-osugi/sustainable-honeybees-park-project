@@ -24,6 +24,10 @@
         <title>サステナハニー公園プロジェクト - 関連団体</title>
     </head>
     <body class="back-ground-color">
+        <!-- 背景 -->
+        <div class="hex-bg"></div>
+
+        <!-- ヘッダー -->
         <div id="header-placeholder"></div>
         <div class="container mt-5 mb-4">
             <h2 class="page-title">関連団体</h2>
@@ -125,6 +129,22 @@
                 .then((data) => {
                     document.getElementById("footer").innerHTML = data;
                 });
+        </script>
+        <script>
+            const hexContainer = document.querySelector(".hex-bg");
+            if (hexContainer) {
+                for (let row = 0; row < 20; row++) {
+                    const rowDiv = document.createElement("div");
+                    rowDiv.className = "hex-row";
+                    if (row % 2 === 1) rowDiv.classList.add("offset");
+                    for (let col = 0; col < 8; col++) {
+                        const hex = document.createElement("div");
+                        hex.className = "hex";
+                        rowDiv.appendChild(hex);
+                    }
+                    hexContainer.appendChild(rowDiv);
+                }
+            }
         </script>
         <script src="js/groups.js"></script>
         <script>
