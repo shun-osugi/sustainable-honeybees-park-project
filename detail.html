@@ -24,6 +24,9 @@
         <title>サステナハニー公園プロジェクト - 各部に込められた意味</title>
     </head>
     <body class="d-flex flex-column min-vh-100">
+        <!-- 背景 -->
+        <div class="hex-bg"></div>
+
         <!-- ヘッダー -->
         <div id="header-placeholder"></div>
         <div class="container my-5">
@@ -200,6 +203,22 @@
                 .then((data) => {
                     document.getElementById("footer").innerHTML = data;
                 });
+        </script>
+        <script>
+            const hexContainer = document.querySelector(".hex-bg");
+            if (hexContainer) {
+                for (let row = 0; row < 20; row++) {
+                    const rowDiv = document.createElement("div");
+                    rowDiv.className = "hex-row";
+                    if (row % 2 === 1) rowDiv.classList.add("offset");
+                    for (let col = 0; col < 8; col++) {
+                        const hex = document.createElement("div");
+                        hex.className = "hex";
+                        rowDiv.appendChild(hex);
+                    }
+                    hexContainer.appendChild(rowDiv);
+                }
+            }
         </script>
         <script src="js/detail.js"></script>
     </body>

@@ -6,13 +6,112 @@
     --accent-green: #c8ff2a;
     --accent-gold: #ffe100;
     --font-color: #376f5d;
+    --hex-bg-t: rgba(219, 180, 24, 0.5);
+    --hex-bg-b: rgba(255, 225, 0, 0.5);
     --white-bg: rgba(255, 255, 255, 0.95);
     --shadow: rgba(0, 0, 0, 0.5);
     --font-main: "Zen Kurenaido", sans-serif;
 }
 
 body {
+    font-family: "Yu Gothic";
+    background: linear-gradient(
+        to bottom,
+        white,
+        var(--main-bg),
+        var(--font-color)
+    );
     padding-top: 60px; /* ヘッダーの高さ分調整 */
+}
+
+/* 背景コンテナ */
+.hex-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* 六角形の1行 */
+.hex-row {
+    display: flex;
+    justify-content: center;
+}
+
+.hex-row.offset {
+    transform: translateX(5vw);
+}
+
+/* 六角形 */
+.hex {
+    width: 10vw;
+    height: 10vw;
+    background: linear-gradient(to bottom, var(--hex-bg-t), var(--hex-bg-b));
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: floatHex 6s ease-in-out infinite;
+    transition: transform 0.3s;
+    margin: 0.5vw;
+}
+
+/* アニメーション */
+@keyframes floatHex {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateY(-10px) scale(1.02);
+        opacity: 1;
+    }
+}
+
+/* ページタイトルのデザイン */
+.page-title {
+    font-family: var(--font-main);
+    font-size: 1.2rem;
+    color: var(--main-bg);
+    text-shadow: 2px 2px 2px var(--font-color);
+    text-align: center;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        white,
+        white,
+        white,
+        rgba(255, 255, 255, 0)
+    );
+    border-top: 2px solid var(--accent-gold);
+    border-bottom: 2px solid var(--accent-gold);
+    width: 100%;
+    display: block;
+    padding: 0.5em 0;
+}
+
+/* ページタイトルのサイズ - 480px以上 */
+@media (min-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ページタイトルのサイズ - 768px以上 */
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 2.4rem;
+    }
+}
+
+/* ページタイトルのサイズ - 992px以上 */
+@media (min-width: 992px) {
+    .page-title {
+        font-size: 2.6rem;
+    }
 }
 
 /* ↓↓↓↓↓↓ ヘッダーメニュー用 ↓↓↓↓↓↓ */
@@ -201,61 +300,6 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
 }
 /* ↑↑↑↑↑↑ フッターメニュー用 ↑↑↑↑↑↑ */
-
-/* ↓↓↓↓↓↓ 基本設定用 ↓↓↓↓↓↓ */
-body {
-    font-family: "Yu Gothic";
-    background: linear-gradient(
-        to bottom,
-        white,
-        var(--main-bg),
-        var(--font-color)
-    );
-}
-
-/* ページタイトルのデザイン */
-.page-title {
-    font-family: var(--font-main);
-    font-size: 1.2rem;
-    color: var(--main-bg);
-    text-shadow: 2px 2px 2px var(--font-color);
-    text-align: center;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        white,
-        white,
-        white,
-        rgba(255, 255, 255, 0)
-    );
-    border-top: 2px solid var(--accent-gold);
-    border-bottom: 2px solid var(--accent-gold);
-    width: 100%;
-    display: block;
-    padding: 0.5em 0;
-}
-
-/* ページタイトルのサイズ - 480px以上 */
-@media (min-width: 480px) {
-    .page-title {
-        font-size: 1.8rem;
-    }
-}
-
-/* ページタイトルのサイズ - 768px以上 */
-@media (min-width: 768px) {
-    .page-title {
-        font-size: 2.4rem;
-    }
-}
-
-/* ページタイトルのサイズ - 992px以上 */
-@media (min-width: 992px) {
-    .page-title {
-        font-size: 2.6rem;
-    }
-}
-/* ↑↑↑↑↑↑ 基本設定用 ↑↑↑↑↑↑ */
 
 /* ↓↓↓↓↓↓ 六角形の描画用 ↓↓↓↓↓↓ */
 .hexagon-wrapper {
