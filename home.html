@@ -34,7 +34,7 @@
         <div
             class="d-flex justify-content-center align-items-center my-3 my-md-5 pt-3"
         >
-            <div class="d-flex align-items-center">
+            <div class="d-flex flex-column flex-md-row align-items-center">
                 <img class="home-icon" src="img/icon.png" alt="アイコン" />
                 <div>
                     <h5 class="mb-0 home-title">サステナハニー</h5>
@@ -44,9 +44,9 @@
             </div>
         </div>
 
-        <div class="container my-2 my-md-4">
+        <div class="container my-5">
             <!-- タイトル -->
-            <h2 id="section-title" class="page-title">制作の意図</h2>
+            <h2 id="section-title" class="page-title">看板イメージ</h2>
 
             <!-- 画像 -->
             <div class="image-area rounded-4 my-2 my-md-4">
@@ -70,14 +70,56 @@
                 </div>
             </div>
         </div>
-        <!-- フッター読み込み -->
+        <!-- フッター -->
         <div id="footer" class="text-center p-3 mt-auto"></div>
+
+        <script>
+            const textEl = document.getElementById("section-text");
+            const button = document.getElementById("toggle-button");
+
+            let showingFirst = true;
+
+            const firstButtonText = "⇆ 絵の物語を覗く";
+            const secondButtonText = "⇆ 制作の意図に戻る";
+
+            let intention = { title: "", text: "" };
+            let tale = { title: "", text: "" };
+
+            // JSONを読み込んで内容をセット
+            fetch("data/intention.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    intention = data;
+                    // 初期表示：section-title は固定なので section-text のみセット
+                    textEl.innerHTML = `<h2><strong>${intention.title}</strong></h2><p>${intention.text}</p>`;
+                });
+
+            fetch("data/tale.json")
+                .then((res) => res.json())
+                .then((data) => {
+                    tale = data;
+                });
+
+            button.addEventListener("click", () => {
+                if (showingFirst) {
+                    textEl.innerHTML = `<h2><strong>${tale.title}</strong></h2><p>${tale.text}</p>`;
+                    button.innerText = secondButtonText;
+                } else {
+                    textEl.innerHTML = `<h2><strong>${intention.title}</strong></h2><p>${intention.text}</p>`;
+                    button.innerText = firstButtonText;
+                }
+                showingFirst = !showingFirst;
+            });
+        </script>
+
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"
         ></script>
-        <!-- 共通ヘッダー読み込みスクリプト -->
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+        <!-- ヘッダー読み込み -->
         <script>
             fetch("header.html")
                 .then((res) => res.text())
@@ -86,72 +128,14 @@
                         data;
                 });
         </script>
+        <!-- フッター読み込み -->
         <script>
-            // 外部HTML読み込み（ヘッダーと同じように）
             fetch("footer.html")
                 .then((res) => res.text())
                 .then((data) => {
                     document.getElementById("footer").innerHTML = data;
                 });
         </script>
-        <script src="js/common.js"></script>
-        <script>
-            const titleEl = document.getElementById("section-title");
-            const textEl = document.getElementById("section-text");
-            const button = document.getElementById("toggle-button");
-
-            let showingFirst = true;
-
-            const firstTitle = "・制作の意図";
-            const firstButtonText = "⇆ 絵の物語を覗く";
-            const secondTitle = "・物語";
-            const secondButtonText = "⇆ 制作の意図に戻る";
-
-            let intentionContent = "";
-            let taleContent = "";
-
-            // JSONを読み込んで内容をセット
-            fetch("data/intention.json")
-                .then((res) => res.json())
-                .then((data) => {
-                    intentionContent = data.text;
-                    textEl.innerHTML = intentionContent; // 初期表示
-                });
-
-            fetch("data/tale.json")
-                .then((res) => res.json())
-                .then((data) => {
-                    taleContent = data.text;
-                });
-
-            button.addEventListener("click", () => {
-                if (showingFirst) {
-                    titleEl.textContent = secondTitle;
-                    textEl.innerHTML = taleContent;
-                    button.innerText = secondButtonText;
-                } else {
-                    titleEl.textContent = firstTitle;
-                    textEl.innerHTML = intentionContent;
-                    button.innerText = firstButtonText;
-                }
-                showingFirst = !showingFirst;
-            });
-        </script>
-        <script>
-            const hexContainer = document.querySelector(".hex-bg");
-            if (hexContainer) {
-                for (let row = 0; row < 20; row++) {
-                    const rowDiv = document.createElement("div");
-                    rowDiv.className = "hex-row";
-                    if (row % 2 === 1) rowDiv.classList.add("offset");
-                    for (let col = 0; col < 8; col++) {
-                        const hex = document.createElement("div");
-                        hex.className = "hex";
-                        rowDiv.appendChild(hex);
-                    }
-                    hexContainer.appendChild(rowDiv);
-                }
-            }
-        </script>
+        <script src="js/hex-background.js"></script>
     </body>
 </html>

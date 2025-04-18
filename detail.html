@@ -179,7 +179,7 @@
                 </div>
             </div>
         </div>
-        <!-- フッター読み込み -->
+        <!-- フッター -->
         <div id="footer" class="text-center p-3 mt-auto"></div>
 
         <script
@@ -187,7 +187,8 @@
             integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
             crossorigin="anonymous"
         ></script>
-        <!-- 共通ヘッダー読み込みスクリプト -->
+
+        <!-- ヘッダー読み込み -->
         <script>
             fetch("header.html")
                 .then((res) => res.text())
@@ -196,30 +197,15 @@
                         data;
                 });
         </script>
+        <!-- フッター読み込み -->
         <script>
-            // 外部HTML読み込み（ヘッダーと同じように）
             fetch("footer.html")
                 .then((res) => res.text())
                 .then((data) => {
                     document.getElementById("footer").innerHTML = data;
                 });
         </script>
-        <script>
-            const hexContainer = document.querySelector(".hex-bg");
-            if (hexContainer) {
-                for (let row = 0; row < 20; row++) {
-                    const rowDiv = document.createElement("div");
-                    rowDiv.className = "hex-row";
-                    if (row % 2 === 1) rowDiv.classList.add("offset");
-                    for (let col = 0; col < 8; col++) {
-                        const hex = document.createElement("div");
-                        hex.className = "hex";
-                        rowDiv.appendChild(hex);
-                    }
-                    hexContainer.appendChild(rowDiv);
-                }
-            }
-        </script>
         <script src="js/detail.js"></script>
+        <script src="js/hex-background.js"></script>
     </body>
 </html>
