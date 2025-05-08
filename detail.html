@@ -36,24 +36,60 @@
                 <div
                     class="hotspot"
                     data-id="area1"
-                    data-top="63"
-                    data-left="36"
-                    title="闘鶏"
+                    data-top="25"
+                    data-left="20"
+                    title="汽車"
                 ></div>
                 <div
                     class="hotspot"
                     data-id="area2"
-                    data-top="67.5"
-                    data-left="68"
-                    title="気球"
+                    data-top="55"
+                    data-left="30"
+                    title="ゴミの山"
                 ></div>
                 <div
                     class="hotspot"
                     data-id="area3"
-                    data-top="0"
-                    data-left="71"
-                    title="三日月"
+                    data-top="65"
+                    data-left="54"
+                    title="花々"
                 ></div>
+                <div
+                    class="hotspot"
+                    data-id="area4"
+                    data-top="70"
+                    data-left="90"
+                    title="ビル群"
+                ></div>
+                <div
+                    class="hotspot"
+                    data-id="area5"
+                    data-top="15"
+                    data-left="88"
+                    title="雲"
+                ></div>
+                <div
+                    class="hotspot"
+                    data-id="area6"
+                    data-top="3"
+                    data-left="71.5"
+                    title="月"
+                ></div>
+                <div
+                    class="hotspot"
+                    data-id="area7"
+                    data-top="28"
+                    data-left="63"
+                    title="星"
+                ></div>
+                <div
+                    class="hotspot"
+                    data-id="area8"
+                    data-top="67"
+                    data-left="13"
+                    title="乗客"
+                ></div>
+                
             </div>
 
             <div id="instruction" class="text-center my-4 inst-text">
@@ -62,10 +98,10 @@
             <div id="description-container">
                 <div
                     id="area1"
-                    class="description bg-white rounded-4 shadow mt-4 mt-md-5 p-4 p-md-5 text-content text-center"
+                    class="description bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
                     style="--bs-bg-opacity: 0.95"
                 >
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center align-items-center">
                         <div class="col-1">
                             <div class="arrow-buttons">
                                 <button
@@ -77,15 +113,15 @@
                         </div>
                         <div class="col-8 col-md-4">
                             <img
-                                src="img/Skull.png"
+                                src="img/train.png"
                                 class="justify-content-center"
                             />
                         </div>
                         <div class="col-12 col-md-6">
                             <br />
-                            <h3>髑髏</h3>
+                            <h3>汽車</h3>
                             <br />
-                            <h4>「反戦・核兵器廃絶」の象徴</h4>
+                            <h4>空飛ぶ汽車。<br>どこへ向かっているのかな？</h4>
                             <br />
                         </div>
                         <div class="col-1">
@@ -104,7 +140,7 @@
                     class="description bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
                     style="--bs-bg-opacity: 0.95"
                 >
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center align-items-center">
                         <div class="col-1">
                             <div class="arrow-buttons">
                                 <button
@@ -116,15 +152,15 @@
                         </div>
                         <div class="col-8 col-md-4">
                             <img
-                                src="img/air_balloon.png"
+                                src="img/trash.png"
                                 class="justify-content-center"
                             />
                         </div>
                         <div class="col-12 col-md-6">
                             <br />
-                            <h3>気球</h3>
+                            <h3>ゴミの山</h3>
                             <br />
-                            <h4>「自由・無限の可能性」の象徴</h4>
+                            <h4>捨てられたゴミの山。<br>このままでいいのかな？</h4>
                             <br />
                         </div>
                         <div class="col-1">
@@ -155,15 +191,210 @@
                         </div>
                         <div class="col-8 col-md-4">
                             <img
+                                src="img/flower.png"
+                                class="justify-content-center"
+                            />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <br />
+                            <h3>花々</h3>
+                            <br />
+                            <h4>花々。咲き乱れているものから、枯れているものまで。</h4>
+                            <br />
+                        </div>
+                        <div class="col-1">
+                            <div class="back-buttons">
+                                <button
+                                    class="next-btn position-fixed end-0 top-50 translate-middle-y"
+                                >
+                                    ▶
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    id="area4"
+                    class="description bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
+                    style="--bs-bg-opacity: 0.95"
+                >
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-1">
+                            <div class="arrow-buttons">
+                                <button
+                                    class="prev-btn position-fixed start-0 top-50 translate-middle-y"
+                                >
+                                    ◀
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-8 col-md-4">
+                            <img
+                                src="img/building.png"
+                                class="justify-content-center"
+                            />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <br />
+                            <h3>ビル群</h3>
+                            <br />
+                            <h4>そびえ立つビル群。<br>都会でも星が見えたらいいな。</h4>
+                            <br />
+                        </div>
+                        <div class="col-1">
+                            <div class="back-buttons">
+                                <button
+                                    class="next-btn position-fixed end-0 top-50 translate-middle-y"
+                                >
+                                    ▶
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    id="area5"
+                    class="description bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
+                    style="--bs-bg-opacity: 0.95"
+                >
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-1">
+                            <div class="arrow-buttons">
+                                <button
+                                    class="prev-btn position-fixed start-0 top-50 translate-middle-y"
+                                >
+                                    ◀
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-8 col-md-4">
+                            <img
+                                src="img/cloud.png"
+                                class="justify-content-center"
+                            />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <br />
+                            <h3>雲</h3>
+                            <br />
+                            <h4>雲にも煙にも見える。<br>雲があると空は快く晴れないね。</h4>
+                            <br />
+                        </div>
+                        <div class="col-1">
+                            <div class="back-buttons">
+                                <button
+                                    class="next-btn position-fixed end-0 top-50 translate-middle-y"
+                                >
+                                    ▶
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    id="area6"
+                    class="description bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
+                    style="--bs-bg-opacity: 0.95"
+                >
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-1">
+                            <div class="arrow-buttons">
+                                <button
+                                    class="prev-btn position-fixed start-0 top-50 translate-middle-y"
+                                >
+                                    ◀
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-8 col-md-4">
+                            <img
                                 src="img/crescent_moon.png"
                                 class="justify-content-center"
                             />
                         </div>
                         <div class="col-12 col-md-6">
                             <br />
-                            <h3>三日月</h3>
+                            <h3>月</h3>
                             <br />
-                            <h4>「再生・新たな始まり・幸運の前兆」の象徴</h4>
+                            <h4>夜を明るく照らす下弦の月。<br>月にウサギはいるのかな？</h4>
+                            <br />
+                        </div>
+                        <div class="col-1">
+                            <div class="back-buttons">
+                                <button
+                                    class="next-btn position-fixed end-0 top-50 translate-middle-y"
+                                >
+                                    ▶
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    id="area7"
+                    class="description bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
+                    style="--bs-bg-opacity: 0.95"
+                >
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-1">
+                            <div class="arrow-buttons">
+                                <button
+                                    class="prev-btn position-fixed start-0 top-50 translate-middle-y"
+                                >
+                                    ◀
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-8 col-md-4">
+                            <img
+                                src="img/star.png"
+                                class="justify-content-center"
+                            />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <br />
+                            <h3>星</h3>
+                            <br />
+                            <h4>きらきら光る、お空の星よ。<br>きれいな空気だとよく見える</h4>
+                            <br />
+                        </div>
+                        <div class="col-1">
+                            <div class="back-buttons">
+                                <button
+                                    class="next-btn position-fixed end-0 top-50 translate-middle-y"
+                                >
+                                    ▶
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    id="area8"
+                    class="description bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
+                    style="--bs-bg-opacity: 0.95"
+                >
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-1">
+                            <div class="arrow-buttons">
+                                <button
+                                    class="prev-btn position-fixed start-0 top-50 translate-middle-y"
+                                >
+                                    ◀
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-8 col-md-4">
+                            <img
+                                src="img/boy.png"
+                                class="justify-content-center"
+                            />
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <br />
+                            <h3>乗客</h3>
+                            <br />
+                            <h4>男の子かな、女の子かな？<br>何を見てるのかな。どこに行くのかな？</h4>
                             <br />
                         </div>
                         <div class="col-1">

@@ -66,7 +66,6 @@
 
 .hotspot {
     position: absolute;
-
     border-radius: 50%;
     border: 2px solid red;
     cursor: pointer;
@@ -77,31 +76,68 @@
     transform: scale(1.1);
 }
 
+/* 大画面 1200px以上 */
 @media (min-width: 1200px) {
     .hotspot {
-        width: 70px;
-        height: 70px;
+        width: 55px;
+        height: 55px;
+    }
+    .hotspot[data-id="area1"],
+    .hotspot[data-id="area7"] {
+        width: 80px; 
+        height: 80px;
     }
 }
 
-@media (min-width: 992px) {
-    .hotspot {
-        width: 60px;
-        height: 60px;
-    }
-}
-
-@media (min-width: 768px) {
+/* 中画面 992px〜1199px */
+@media (min-width: 992px) and (max-width: 1199.98px){
     .hotspot {
         width: 50px;
         height: 50px;
     }
+    .hotspot[data-id="area1"],
+    .hotspot[data-id="area7"] {
+        width: 70px; 
+        height: 70px;
+    }
 }
 
-@media (min-width: 480px) {
+/* タブレット 768px〜991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
     .hotspot {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
+    }
+    .hotspot[data-id="area1"],
+    .hotspot[data-id="area7"] {
+        width: 65px; 
+        height: 65px;
+    }
+}
+
+/* スマホ小さめ 481px〜767px */
+@media (min-width: 481px) and (max-width: 767.98px) {
+    .hotspot { 
+        width: 40px; 
+        height: 40px; 
+    }
+    .hotspot[data-id="area1"],
+    .hotspot[data-id="area7"] { 
+        width: 60px; 
+        height: 60px; 
+    }
+}
+
+/* スマホ極小 〜480px */
+@media (max-width: 480px) {
+    .hotspot {
+        width: 40px;
+        height: 40px;
+    }
+    .hotspot[data-id="area1"],
+    .hotspot[data-id="area7"] {
+        width: 55px; 
+        height: 55px;
     }
 }
 
@@ -118,6 +154,7 @@
 
 .description img {
     margin-top: 35px;
+    margin-bottom: 40px;
     width: 90%;
     max-width: 800px; /* 最大幅を800pxに制限 */
     height: auto;
@@ -136,18 +173,9 @@
 }
 
 /* スマホ用 (画面幅768px以下) */
-@media (max-width: 768px) {
-    .hotspot {
-        position: absolute;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        border: 2px solid red;
-        cursor: pointer;
-        transition: transform 0.3s;
-    }
+@media (min-width: 768px) {
     .description img {
-        margin-top: 70px;
+        margin-top: 20px;
         width: 80%;
         max-width: 800px; /* 最大幅を800pxに制限 */
         height: auto;
@@ -155,16 +183,7 @@
     }
 }
 
-@media (max-width: 480px) {
-    .hotspot {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 2px solid red;
-        cursor: pointer;
-        transition: transform 0.3s;
-    }
+@media (min-width: 480px) {
     .description h2,
     .description p {
         text-align: center;
@@ -179,16 +198,7 @@
     }
 }
 
-@media (max-width: 320px) {
-    .hotspot {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 2px solid red;
-        cursor: pointer;
-        transition: transform 0.3s;
-    }
+@media (min-width: 320px) {
     .description h2,
     .description p {
         text-align: center;
