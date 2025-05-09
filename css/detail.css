@@ -83,6 +83,7 @@
         height: 55px;
     }
     .hotspot[data-id="area1"],
+    .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] {
         width: 80px; 
         height: 80px;
@@ -96,6 +97,7 @@
         height: 50px;
     }
     .hotspot[data-id="area1"],
+    .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] {
         width: 70px; 
         height: 70px;
@@ -109,6 +111,7 @@
         height: 50px;
     }
     .hotspot[data-id="area1"],
+    .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] {
         width: 65px; 
         height: 65px;
@@ -122,6 +125,7 @@
         height: 40px; 
     }
     .hotspot[data-id="area1"],
+    .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] { 
         width: 60px; 
         height: 60px; 
@@ -135,6 +139,7 @@
         height: 40px;
     }
     .hotspot[data-id="area1"],
+    .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] {
         width: 55px; 
         height: 55px;
