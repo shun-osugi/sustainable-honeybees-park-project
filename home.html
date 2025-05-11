@@ -58,59 +58,31 @@
                 class="bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
                 style="--bs-bg-opacity: 0.95"
             >
-                <p id="section-text"></p>
+                <div
+                    id="intention-content"
+                    class="text-content text-center"
+                ></div>
+
                 <!-- 切り替えボタン -->
-                <div class="text-center">
+                <div class="text-center mt-3">
                     <button
                         id="toggle-button"
                         class="custom-toggle-button text-content rounded-5"
                     >
-                        ⇆ 絵の物語を覗く
+                        ▼ 絵の物語を覗く
                     </button>
                 </div>
+
+                <!-- 物語エリア（最初は非表示） -->
+                <div
+                    id="tale-content"
+                    class="mt-4 text-content text-center"
+                    style="display: none"
+                ></div>
             </div>
         </div>
         <!-- フッター -->
         <div id="footer" class="text-center p-3 mt-auto"></div>
-
-        <script>
-            const textEl = document.getElementById("section-text");
-            const button = document.getElementById("toggle-button");
-
-            let showingFirst = true;
-
-            const firstButtonText = "⇆ 絵の物語を覗く";
-            const secondButtonText = "⇆ 制作の意図に戻る";
-
-            let intention = { title: "", text: "" };
-            let tale = { title: "", text: "" };
-
-            // JSONを読み込んで内容をセット
-            fetch("data/intention.json")
-                .then((res) => res.json())
-                .then((data) => {
-                    intention = data;
-                    // 初期表示：section-title は固定なので section-text のみセット
-                    textEl.innerHTML = `<h2><strong>${intention.title}</strong></h2><p>${intention.text}</p>`;
-                });
-
-            fetch("data/tale.json")
-                .then((res) => res.json())
-                .then((data) => {
-                    tale = data;
-                });
-
-            button.addEventListener("click", () => {
-                if (showingFirst) {
-                    textEl.innerHTML = `<h2><strong>${tale.title}</strong></h2><p>${tale.text}</p>`;
-                    button.innerText = secondButtonText;
-                } else {
-                    textEl.innerHTML = `<h2><strong>${intention.title}</strong></h2><p>${intention.text}</p>`;
-                    button.innerText = firstButtonText;
-                }
-                showingFirst = !showingFirst;
-            });
-        </script>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
@@ -136,6 +108,24 @@
                     document.getElementById("footer").innerHTML = data;
                 });
         </script>
+        <script src="js/text-format.js"></script>
         <script src="js/hex-background.js"></script>
+
+        <script>
+            //　jsonを読み込んで文章を表示
+            loadOrganizationData("data/intention.json", "intention-content");
+            loadOrganizationData("data/tale.json", "tale-content");
+            const toggleBtn = document.getElementById("toggle-button");
+            const taleEl = document.getElementById("tale-content");
+            let taleVisible = false;
+
+            toggleBtn.addEventListener("click", () => {
+                taleVisible = !taleVisible;
+                taleEl.style.display = taleVisible ? "block" : "none";
+                toggleBtn.innerText = taleVisible
+                    ? "▲ 閉じる"
+                    : "▼ 絵の物語を覗く";
+            });
+        </script>
     </body>
 </html>
