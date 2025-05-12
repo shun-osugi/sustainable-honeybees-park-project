@@ -39,8 +39,33 @@
     );
     color: var(--font-color);
     font-size: 1.1rem;
+    font-weight: bold;
     padding: 12px 32px;
     border: none;
     box-shadow: 0 4px 10px var(--shadow);
     transition: transform 0.6s ease;
+}
+
+/* 物語モーダル */
+.custom-modal-content {
+    background: linear-gradient(
+        180deg,
+        var(--white-grey),
+        var(--white-grey),
+        var(--accent-green),
+        var(--accent-gold)
+    );
+    color: var(--font-color);
+}
+
+/* リンク */
+.tale-link {
+    color: var(--shadow);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.tale-link:hover {
+    color: var(--white-grey);
+    text-decoration: underline;
 }

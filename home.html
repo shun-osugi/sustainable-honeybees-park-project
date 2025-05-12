@@ -68,17 +68,12 @@
                     <button
                         id="toggle-button"
                         class="custom-toggle-button text-content rounded-5"
+                        data-bs-toggle="modal"
+                        data-bs-target="#taleModal"
                     >
-                        ▼ 絵の物語を覗く
+                        絵の物語を覗く🔎
                     </button>
                 </div>
-
-                <!-- 物語エリア（最初は非表示） -->
-                <div
-                    id="tale-content"
-                    class="mt-4 text-content text-center"
-                    style="display: none"
-                ></div>
             </div>
         </div>
         <!-- フッター -->
@@ -110,22 +105,49 @@
         </script>
         <script src="js/text-format.js"></script>
         <script src="js/hex-background.js"></script>
-
+        <!-- モーダル -->
+        <div
+            class="modal fade"
+            id="taleModal"
+            tabindex="-1"
+            aria-labelledby="taleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content custom-modal-content">
+                    <div
+                        class="modal-body"
+                        style="max-height: 70vh; overflow-y: auto"
+                    >
+                        <!-- 閉じるボタン（右上に重ねる） -->
+                        <button
+                            type="button"
+                            class="btn-close position-absolute"
+                            style="top: 1rem; right: 1rem; z-index: 1051"
+                            data-bs-dismiss="modal"
+                            aria-label="閉じる"
+                        ></button>
+                        <!-- 物語本文 -->
+                        <div
+                            id="tale-content"
+                            class="text-content text-center fw-bold"
+                        ></div>
+                        <!-- noteリンク -->
+                        <a
+                            href="https://note.com/mojimojigarllery"
+                            target="_blank"
+                            class="tale-link d-block text-center fw-bold"
+                        >
+                            完全版の物語はnoteで公開！
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script>
             //　jsonを読み込んで文章を表示
             loadOrganizationData("data/intention.json", "intention-content");
             loadOrganizationData("data/tale.json", "tale-content");
-            const toggleBtn = document.getElementById("toggle-button");
-            const taleEl = document.getElementById("tale-content");
-            let taleVisible = false;
-
-            toggleBtn.addEventListener("click", () => {
-                taleVisible = !taleVisible;
-                taleEl.style.display = taleVisible ? "block" : "none";
-                toggleBtn.innerText = taleVisible
-                    ? "▲ 閉じる"
-                    : "▼ 絵の物語を覗く";
-            });
         </script>
     </body>
 </html>
