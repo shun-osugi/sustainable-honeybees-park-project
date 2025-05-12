@@ -1,11 +1,11 @@
 AOS.init();
 
 async function loadHexagons() {
-    const response = await fetch("data/story.json");
+    const response = await fetch("data/story_moji.json");
     const data = await response.json();
     const container = document.getElementById("content-area");
 
-    for (let i = 1; i <= 7; i++) {
+    for (let i = 1; i <= 5; i++) {
         const hex = data.hexagons.find((h) => h.id === `${i}`);
         if (!hex) continue;
 
@@ -13,7 +13,7 @@ async function loadHexagons() {
         group.className = "hexagon-group";
         group.setAttribute("data-aos", "fade-up");
 
-        group.appendChild(createHexagonImage(`img/history${i}.png`));
+        group.appendChild(createHexagonImage(`img/history_moji${i}.jpg`));
         group.appendChild(
             createHexagonText(hex.title, hex.text, hex.linkHref, hex.linkText)
         );
@@ -21,7 +21,7 @@ async function loadHexagons() {
         const textArea = document.createElement("div");
         textArea.className = "text-content";
         textArea.innerHTML = `
-      <h2>${hex.title}</h2>
+      ${hex.title ? `<h2>${hex.title}</h2>` : ""}
       <p>${hex.text}</p>
       ${
           hex.linkHref && hex.linkText

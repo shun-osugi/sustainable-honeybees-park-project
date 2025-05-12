@@ -25,6 +25,18 @@ body {
     padding-top: 60px; /* ヘッダーの高さ分調整 */
 }
 
+/* リンクテキスト */
+.link-text {
+    color: var(--shadow);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.link-text:hover {
+    color: var(--white-grey);
+    text-decoration: underline;
+}
+
 /* 背景コンテナ */
 .hex-bg {
     position: absolute;

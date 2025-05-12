@@ -57,15 +57,3 @@
     );
     color: var(--font-color);
 }
-
-/* リンク */
-.tale-link {
-    color: var(--shadow);
-    text-decoration: underline;
-    transition: color 0.2s ease;
-}
-
-.tale-link:hover {
-    color: var(--white-grey);
-    text-decoration: underline;
-}
