@@ -36,6 +36,7 @@
     cursor: pointer;
     font-size: 1.2rem;
     transition: background-color 0.3s, transform 0.2s ease-in-out;
+    color: var(--font-color);
 }
 
 .arrow-buttons button:hover,
@@ -85,13 +86,13 @@
     .hotspot[data-id="area1"],
     .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] {
-        width: 80px; 
+        width: 80px;
         height: 80px;
     }
 }
 
 /* 中画面 992px〜1199px */
-@media (min-width: 992px) and (max-width: 1199.98px){
+@media (min-width: 992px) and (max-width: 1199.98px) {
     .hotspot {
         width: 50px;
         height: 50px;
@@ -99,7 +100,7 @@
     .hotspot[data-id="area1"],
     .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] {
-        width: 70px; 
+        width: 70px;
         height: 70px;
     }
 }
@@ -113,22 +114,22 @@
     .hotspot[data-id="area1"],
     .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] {
-        width: 65px; 
+        width: 65px;
         height: 65px;
     }
 }
 
 /* スマホ小さめ 481px〜767px */
 @media (min-width: 481px) and (max-width: 767.98px) {
-    .hotspot { 
-        width: 40px; 
-        height: 40px; 
+    .hotspot {
+        width: 40px;
+        height: 40px;
     }
     .hotspot[data-id="area1"],
     .hotspot[data-id="area5"],
-    .hotspot[data-id="area7"] { 
-        width: 60px; 
-        height: 60px; 
+    .hotspot[data-id="area7"] {
+        width: 60px;
+        height: 60px;
     }
 }
 
@@ -141,7 +142,7 @@
     .hotspot[data-id="area1"],
     .hotspot[data-id="area5"],
     .hotspot[data-id="area7"] {
-        width: 55px; 
+        width: 55px;
         height: 55px;
     }
 }
