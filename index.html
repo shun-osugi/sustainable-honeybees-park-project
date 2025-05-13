@@ -1,62 +1,153 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <title>Home</title>
-        <style>
-            .full-height {
-                height: 100vh;
-                overflow: hidden; /* 画面外に出てもスクロールしないように */
-                position: relative;
-                background-image: url('img/field.jpg'); /* ここに背景画像のURLを入れる */
-                background-size: cover; /* 画像を画面いっぱいに */
-                background-position: center; /* 画像を中央に配置 */
-                background-repeat: no-repeat; /* 繰り返しを無効化 */
-            }
-            .bee1 {
-                font-size: 2rem;
-                display: inline-block;
-                animation: fly 2s infinite alternate ease-in-out;
-            }
-            @keyframes fly {
-                0% { transform: translateX(-20px) translateY(0px) rotate(0deg); }
-                50% { transform: translateX(20px) translateY(-10px) rotate(10deg); }
-                100% { transform: translateX(-20px) translateY(0px) rotate(0deg); }
-            }
-            .bee2 {
-                font-size: 2rem;
-                position: absolute;
-                left: -50px; /* 画面の外から開始 */
-                bottom: 30%;
-                animation: fly-loop 6s infinite linear;
-            }
-
-            @keyframes fly-loop {
-                0% { transform: translateX(100vw) translateY(0px) rotate(0deg); opacity: 1; }
-                10% { transform: translateX(90vw) translateY(30px) rotate(0deg); opacity: 1; }
-                20% { transform: translateX(75vw) translateY(-10px) rotate(0deg); }
-                30% { transform: translateX(60vw) translateY(0px) rotate(0deg); opacity: 1; }
-                35% { transform: translateX(55vw) translateY(-10px) rotate(45deg); opacity: 1; }
-                40% { transform: translateX(50vw) translateY(-20px) rotate(90deg); }
-                45% { transform: translateX(55vw) translateY(-30px) rotate(135deg); }
-                50% { transform: translateX(60vw) translateY(-40px) rotate(180deg); opacity: 1; }
-                55% { transform: translateX(65vw) translateY(-30px) rotate(225deg); }
-                60% { transform: translateX(70vw) translateY(-20px) rotate(270deg); opacity: 1;}
-                65% { transform: translateX(65vw) translateY(-10px) rotate(315deg); }
-                70% { transform: translateX(60vw) translateY(0px) rotate(360deg); opacity: 1; }
-                100% { transform: translateX(-50px) translateY(0px) rotate(360deg); opacity: 0; } /* 左端で消える */
-            }
-        </style>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+        <!-- 外部CSSファイルをリンク -->
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <!-- 外部フォントをリンク -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap"
+            rel="stylesheet"
+        />
+        <title>サステナハニー公園プロジェクト</title>
     </head>
-    <body class="d-flex justify-content-center align-items-center full-height">
-        <div class="text-center">
-            <div class="bee1">🐝</div>
-            <h1 class="display-4 mt-3 text-muted">ページ準備中</h1>
-            <p class="lead">しばらくお待ちください。</p>
-            <div></div>
-            <div class="bee2">🐝</div>
+    <body class="d-flex flex-column min-vh-100">
+        <!-- 背景 -->
+        <div class="hex-bg"></div>
+
+        <!-- ヘッダー -->
+        <div id="header-placeholder"></div>
+
+        <!-- ロゴ -->
+        <div
+            class="d-flex justify-content-center align-items-center my-3 my-md-5 pt-3"
+        >
+            <div class="d-flex flex-column flex-md-row align-items-center">
+                <img class="home-icon" src="img/icon.png" alt="アイコン" />
+                <div>
+                    <h5 class="mb-0 home-title">サステナハニー</h5>
+                    <h5 class="mb-0 home-title">公園</h5>
+                    <h5 class="mb-0 home-title">プロジェクト</h5>
+                </div>
+            </div>
         </div>
+
+        <div class="container my-5">
+            <!-- タイトル -->
+            <h2 id="section-title" class="page-title">看板イメージ</h2>
+
+            <!-- 画像 -->
+            <div class="image-area rounded-4 my-2 my-md-4">
+                <img src="img/picture.png" alt="看板デザイン" />
+            </div>
+
+            <!-- 文章エリア -->
+            <div
+                class="bg-white rounded-4 shadow mt-4 mt-md-5 p-3 p-md-4 text-content text-center"
+                style="--bs-bg-opacity: 0.95"
+            >
+                <div
+                    id="intention-content"
+                    class="text-content text-center"
+                ></div>
+
+                <!-- 切り替えボタン -->
+                <div class="text-center mt-3">
+                    <button
+                        id="toggle-button"
+                        class="custom-toggle-button text-content rounded-5"
+                        data-bs-toggle="modal"
+                        data-bs-target="#taleModal"
+                    >
+                        絵の物語を覗く🔎
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- フッター -->
+        <div id="footer" class="text-center p-3 mt-auto"></div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+        <!-- ヘッダー読み込み -->
+        <script>
+            fetch("header.html")
+                .then((res) => res.text())
+                .then((data) => {
+                    document.getElementById("header-placeholder").innerHTML =
+                        data;
+                });
+        </script>
+        <!-- フッター読み込み -->
+        <script>
+            fetch("footer.html")
+                .then((res) => res.text())
+                .then((data) => {
+                    document.getElementById("footer").innerHTML = data;
+                });
+        </script>
+        <script src="js/text-format.js"></script>
+        <script src="js/hex-background.js"></script>
+        <!-- モーダル -->
+        <div
+            class="modal fade"
+            id="taleModal"
+            tabindex="-1"
+            aria-labelledby="taleModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content custom-modal-content">
+                    <div
+                        class="modal-body"
+                        style="max-height: 70vh; overflow-y: auto"
+                    >
+                        <!-- 閉じるボタン（右上に重ねる） -->
+                        <button
+                            type="button"
+                            class="btn-close position-absolute"
+                            style="top: 1rem; right: 1rem; z-index: 1051"
+                            data-bs-dismiss="modal"
+                            aria-label="閉じる"
+                        ></button>
+                        <!-- 物語本文 -->
+                        <div
+                            id="tale-content"
+                            class="text-content text-center fw-bold"
+                        ></div>
+                        <!-- noteリンク -->
+                        <a
+                            href="https://note.com/mojimojigarllery"
+                            target="_blank"
+                            class="link-text d-block text-center fw-bold"
+                        >
+                            完全版の物語はnoteで公開！
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            //　jsonを読み込んで文章を表示
+            loadOrganizationData("data/intention.json", "intention-content");
+            loadOrganizationData("data/tale.json", "tale-content");
+        </script>
     </body>
 </html>
