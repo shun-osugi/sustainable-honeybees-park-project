@@ -120,8 +120,8 @@
 /* タブレット 768px〜991px */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .hotspot {
-        width: 50px;
-        height: 50px;
+        width: 55px;
+        height: 55px;
     }
     .hotspot[data-id="area4"],
     .hotspot[data-id="area7"],
@@ -140,6 +140,26 @@
 /* スマホ小さめ 481px〜767px */
 @media (min-width: 481px) and (max-width: 767.98px) {
     .hotspot {
+        width: 50px;
+        height: 50px;
+    }
+    .hotspot[data-id="area4"],
+    .hotspot[data-id="area7"],
+    .hotspot[data-id="area8"] {
+        width: 60px;
+        height: 60px;
+    }
+    .hotspot[data-id="area1"],
+    .hotspot[data-id="area2"],
+    .hotspot[data-id="area5"] {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+/* スマホ極小 〜480px */
+@media (max-width: 480px) {
+    .hotspot {
         width: 45px;
         height: 45px;
     }
@@ -152,28 +172,8 @@
     .hotspot[data-id="area1"],
     .hotspot[data-id="area2"],
     .hotspot[data-id="area5"] {
-        width: 65px;
-        height: 65px;
-    }
-}
-
-/* スマホ極小 〜480px */
-@media (max-width: 480px) {
-    .hotspot {
-        width: 35px;
-        height: 35px;
-    }
-    .hotspot[data-id="area4"],
-    .hotspot[data-id="area7"],
-    .hotspot[data-id="area8"] {
-        width: 45px;
-        height: 45px;
-    }
-    .hotspot[data-id="area1"],
-    .hotspot[data-id="area2"],
-    .hotspot[data-id="area5"] {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
 }
 
