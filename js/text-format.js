@@ -16,6 +16,19 @@ function loadOrganizationData(jsonFile, containerId) {
                 p.textContent = text;
                 container.appendChild(p);
             });
+
+            if (data.linkHref && data.linkText) {
+                const link = document.createElement("a");
+                link.href = data.linkHref;
+                link.textContent = data.linkText;
+                link.className = "link-text";
+                link.target = "_blank"; // 新しいタブで開く
+                link.rel = "noopener noreferrer"; // セキュリティ対策
+
+                const linkContainer = document.createElement("p");
+                linkContainer.appendChild(link);
+                container.appendChild(linkContainer);
+            }
         })
         .catch((error) => {
             console.error("JSON読み込みエラー:", error);
