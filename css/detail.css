@@ -80,28 +80,40 @@
 /* 大画面 1200px以上 */
 @media (min-width: 1200px) {
     .hotspot {
-        width: 55px;
-        height: 55px;
-    }
-    .hotspot[data-id="area1"],
-    .hotspot[data-id="area5"],
-    .hotspot[data-id="area7"] {
         width: 80px;
         height: 80px;
+    }
+    .hotspot[data-id="area4"],
+    .hotspot[data-id="area7"],
+    .hotspot[data-id="area8"] {
+        width: 100px;
+        height: 100px;
+    }
+    .hotspot[data-id="area1"],
+    .hotspot[data-id="area2"],
+    .hotspot[data-id="area5"] {
+        width: 120px;
+        height: 120px;
     }
 }
 
 /* 中画面 992px〜1199px */
 @media (min-width: 992px) and (max-width: 1199.98px) {
     .hotspot {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
+    }
+    .hotspot[data-id="area4"],
+    .hotspot[data-id="area7"],
+    .hotspot[data-id="area8"] {
+        width: 80px;
+        height: 80px;
     }
     .hotspot[data-id="area1"],
-    .hotspot[data-id="area5"],
-    .hotspot[data-id="area7"] {
-        width: 70px;
-        height: 70px;
+    .hotspot[data-id="area2"],
+    .hotspot[data-id="area5"] {
+        width: 100px;
+        height: 100px;
     }
 }
 
@@ -111,39 +123,57 @@
         width: 50px;
         height: 50px;
     }
-    .hotspot[data-id="area1"],
-    .hotspot[data-id="area5"],
-    .hotspot[data-id="area7"] {
+    .hotspot[data-id="area4"],
+    .hotspot[data-id="area7"],
+    .hotspot[data-id="area8"] {
         width: 65px;
         height: 65px;
+    }
+    .hotspot[data-id="area1"],
+    .hotspot[data-id="area2"],
+    .hotspot[data-id="area5"] {
+        width: 80px;
+        height: 80px;
     }
 }
 
 /* スマホ小さめ 481px〜767px */
 @media (min-width: 481px) and (max-width: 767.98px) {
     .hotspot {
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
+    }
+    .hotspot[data-id="area4"],
+    .hotspot[data-id="area7"],
+    .hotspot[data-id="area8"] {
+        width: 55px;
+        height: 55px;
     }
     .hotspot[data-id="area1"],
-    .hotspot[data-id="area5"],
-    .hotspot[data-id="area7"] {
-        width: 60px;
-        height: 60px;
+    .hotspot[data-id="area2"],
+    .hotspot[data-id="area5"] {
+        width: 65px;
+        height: 65px;
     }
 }
 
 /* スマホ極小 〜480px */
 @media (max-width: 480px) {
     .hotspot {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
+    }
+    .hotspot[data-id="area4"],
+    .hotspot[data-id="area7"],
+    .hotspot[data-id="area8"] {
+        width: 45px;
+        height: 45px;
     }
     .hotspot[data-id="area1"],
-    .hotspot[data-id="area5"],
-    .hotspot[data-id="area7"] {
-        width: 55px;
-        height: 55px;
+    .hotspot[data-id="area2"],
+    .hotspot[data-id="area5"] {
+        width: 60px;
+        height: 60px;
     }
 }
 
